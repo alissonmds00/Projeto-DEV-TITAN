@@ -1,0 +1,32 @@
+html {
+    font-size: 62.5%;
+}
+
+#searchbox {
+    width: 75rem;
+    height: 6rem;
+    left: 58.5rem;
+    top: 5.5rem;
+    
+    background: #E9E9E9;
+    border-radius: 2rem;
+}
+
+.container header nav {
+    margin: 4.7rem 10rem;
+}
+
+.container header nav ul{
+    display: flex;
+    flex-direction: row;
+}
+
+#logar p {
+    display: flex;
+    flex-direction: column;
+}
+
+/*#searchbutton {
+
+}
+*/
