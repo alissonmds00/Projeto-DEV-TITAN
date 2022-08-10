@@ -4,7 +4,6 @@ export function Home() {
   return (
     <div className="container">
       <header>
-        <nav>
           <ul>
             <li>
               <img src="" alt="" />
@@ -26,7 +25,6 @@ export function Home() {
               <a href=""><img src="" alt="" /></a>
             </li>
           </ul>
-        </nav>
       </header>
 
       <main>
