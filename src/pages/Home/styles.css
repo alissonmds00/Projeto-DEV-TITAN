@@ -2,28 +2,69 @@ html {
     font-size: 62.5%;
 }
 
+
 #searchbox {
     width: 75rem;
     height: 6rem;
     left: 58.5rem;
     top: 5.5rem;
-    
+
     background: #E9E9E9;
     border-radius: 2rem;
 }
 
-.container header nav {
+.container header {
     margin: 4.7rem 10rem;
 }
 
-.container header nav ul{
+.container header ul {
+    align-items: center;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#logar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #logar p {
     display: flex;
     flex-direction: column;
+}
+
+#logo {
+    display: block;
+    width: 29.3rem;
+    height: 6.6rem;
+}
+
+#searchbutton {
+    background: none;
+    border: none;
+}
+
+.container footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 12rem;
+}
+
+.container footer img {
+    width: 16.6rem;
+    height: 3.8rem;
+}
+
+.container footer ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }
 
 /*#searchbutton {
