@@ -5,6 +5,7 @@ html {
 .container header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
     padding: 4.7rem 10rem;
 }
 
@@ -16,18 +17,21 @@ html {
 }
 
 #logo {
+    max-width: 100%;
     display: flex;
-    width: 29.3rem;
     height: 6.6rem;
+}
+
+#searchbox {
+    width: 40%;
+    display: flex;
 }
 
 #searchbox form {
     display: flex;
     flex-direction: row;
-    width: 45rem;
-    height: 6rem;
-    padding-left: 2rem;
     border-radius: 2rem;
+    height: 6rem;
 }
 
 #searchbox input, #searchbox input:hover,  #searchbox input:focus {
@@ -35,10 +39,14 @@ html {
     background: none;
     outline: none;
     border: none;
+    padding: 2rem;
 }
 
-#searchbutton {
-    vertical-align: -50%;
+#userarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3.5rem;
 }
 
 #logar {
@@ -53,10 +61,10 @@ html {
     flex-direction: column;
 }
 
-
 #searchbutton {
     background: none;
     border: none;
+    padding: 1rem;
 }
 
 .container footer {
@@ -64,7 +72,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 12rem;
+    padding: 12rem;
 }
 
 .container footer img {

@@ -1,5 +1,5 @@
 import './styles.css'
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo.svg'
 import Cesta from '../../assets/cesta.svg'
 import UserIcon from '../../assets/userIcon.svg'
 import Search from '../../assets/search.svg'
@@ -11,13 +11,12 @@ export function Home() {
         <a href="#">
           <img src={Logo} id="logo" alt="" />
         </a>
-        <div id='searchbox'>
-          <form action="">
+          <form action="" id='searchbox'>
             <input type="search" name="" placeholder='O que você está buscando?' disabled />
             <button id='searchbutton'><img src={Search} alt="" /></button>
           </form>
-        </div>
-        <ul>
+        <div id='userarea'>
+        <ul id='userarea'>
           <li id='logar'>
             <img id='usericon' src={UserIcon} alt="" />
             <p>
@@ -29,6 +28,7 @@ export function Home() {
             <a href=""><img src={Cesta} alt="" title='Cesta de compras' /></a>
           </li>
         </ul>
+        </div>
       </header>
 
       <main>
