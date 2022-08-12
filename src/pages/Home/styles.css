@@ -2,28 +2,44 @@ html {
     font-size: 62.5%;
 }
 
-
-#searchbox {
-    width: 75rem;
-    height: 6rem;
-    left: 58.5rem;
-    top: 5.5rem;
-
-    background: #E9E9E9;
-    border-radius: 2rem;
-}
-
 .container header {
-    margin: 4.7rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 4.7rem 10rem;
 }
 
 .container header ul {
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
+#logo {
+    display: flex;
+    width: 29.3rem;
+    height: 6.6rem;
+}
+
+#searchbox form {
+    display: flex;
+    flex-direction: row;
+    width: 45rem;
+    height: 6rem;
+    padding-left: 2rem;
+    border-radius: 2rem;
+}
+
+#searchbox input, #searchbox input:hover,  #searchbox input:focus {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+#searchbutton {
+    vertical-align: -50%;
+}
 
 #logar {
     display: flex;
@@ -37,11 +53,6 @@ html {
     flex-direction: column;
 }
 
-#logo {
-    display: block;
-    width: 29.3rem;
-    height: 6.6rem;
-}
 
 #searchbutton {
     background: none;

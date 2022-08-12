@@ -8,23 +8,27 @@ export function Home() {
   return (
     <div className="container">
       <header>
-          <ul>
-            <li>
-              <a href="">
-                <img src={ Logo } id="logo" alt="" />
-              </a>
-            </li>
-            <li id='logar'>
-              <img id='userIcon' src={ UserIcon } alt="" />
-              <p>
-                Bem-vind@!
-                <a href="">Acesse aqui o seu perfil</a>
-              </p>
-            </li>
-            <li>
-              <a href=""><img src={Cesta} alt="" title='Cesta de compras'/></a>
-            </li>
-          </ul>
+        <a href="#">
+          <img src={Logo} id="logo" alt="" />
+        </a>
+        <div id='searchbox'>
+          <form action="">
+            <input type="search" name="" placeholder='O que você está buscando?' disabled />
+            <button id='searchbutton'><img src={Search} alt="" /></button>
+          </form>
+        </div>
+        <ul>
+          <li id='logar'>
+            <img id='usericon' src={UserIcon} alt="" />
+            <p>
+              Bem-vind@!
+              <a href="">Acesse aqui o seu perfil</a>
+            </p>
+          </li>
+          <li id='buycart'>
+            <a href=""><img src={Cesta} alt="" title='Cesta de compras' /></a>
+          </li>
+        </ul>
       </header>
 
       <main>
