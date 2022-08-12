@@ -12,7 +12,7 @@ export function Home() {
           <img src={Logo} id="logo" alt="" />
         </a>
           <form action="" id='searchbox'>
-            <input type="search" name="" placeholder='O que você está buscando?' disabled />
+            <input type="search" name="" placeholder='O que você está buscando?' disabled/>
             <button id='searchbutton'><img src={Search} alt="" /></button>
           </form>
         <div id='userarea'>
@@ -36,6 +36,15 @@ export function Home() {
       </main>
       <footer>
         <img src={Logo} alt="" />
+        <div id="contact">
+          <p>2022</p>
+          <ul>
+            <li><a href="">Trabalhe conosco</a></li>
+            <li><a href="">Termos e condições</a></li>
+            <li><a href="">Acessibilidade</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+        </div>
         <ul>
           <strong>Acesse nosso projeto</strong>
           <li><a href="https://github.com/alissonmds00" target="_blank">Alisson Matias</a></li>
