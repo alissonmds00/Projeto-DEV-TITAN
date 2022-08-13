@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: aqua;
+    background-image: url(../../assets/porta_login.svg);
 }
 
 header {
@@ -48,6 +48,20 @@ label {
     padding-top: 1rem;
 }
 
+#passwordbar {
+    background-image: url(../../assets/lock.svg);
+    background-repeat: no-repeat;
+    background-position-x: 3%;
+    background-position-y: 50%;
+}
+
+#emailbar  {
+    background-image: url(../../assets/mail.svg);
+    background-repeat: no-repeat;
+    background-position-x: 3%;
+    background-position-y: 50%;
+}
+
 .login {
     width: 100%;
     display: flex;
@@ -80,9 +94,15 @@ label {
 }
 
 #loginform button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
     margin-bottom: 7rem;
-    width: 30%;
+    padding: 2rem;
+    width: 40%;
+
+    font-size: 1.8rem;
     color: white;
     height: 3.5rem;
     background: #A4002E;
@@ -95,6 +115,7 @@ label {
     justify-content: right;
     padding: 1rem 0;
     color: gray;
+    font-size: 1.2rem;
 }
 
 #registro p {
