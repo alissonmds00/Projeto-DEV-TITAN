@@ -1,4 +1,4 @@
-import './styles.css'
+import '../Login/styles.css'
 import Logo from '../../assets/logo.svg'
 
 export function Login() {
@@ -14,11 +14,11 @@ export function Login() {
                         <p className='semibold18'>Entre com as suas informações de cadastro</p>
                     </div>
                     <form action="login" id='loginform'>
-                        <label htmlFor="emailbar">E-mail</label>
+                        <label className='semibold18' htmlFor="emailbar">E-mail</label>
                         <div className='login'>
                             <input type="email" name="email" id="emailbar" className='loginitem' placeholder='Digite o seu email' autoFocus />
                         </div>
-                        <label htmlFor="password">Senha</label>
+                        <label className='semibold18' htmlFor="password">Senha</label>
                         <div className='login'>
                             <input type="password"
                                 name="senha"
@@ -26,11 +26,13 @@ export function Login() {
                                 className='loginitem'
                                 placeholder='Digite a sua senha' />
                         </div>
-                        <a href="">Esqueci minha senha</a>
-                        <button>Entrar</button>
+                        <a id='esqueci' className='regular18' href="">Esqueci minha senha</a>
+                        <div id="button">
+                            <button>Entrar</button>
+                        </div>
                     </form>
-                    <div>
-                        <p>Não possui uma conta? <a href=""> Cadastre-se</a></p>
+                    <div id='registro'>
+                        <p className='semibold18'>Não possui uma conta? <a href=""> Cadastre-se</a></p>
                     </div>
                 </div>
             </main>

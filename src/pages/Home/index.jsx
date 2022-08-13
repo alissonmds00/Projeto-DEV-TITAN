@@ -1,5 +1,4 @@
-import '../../styles/global.css'
-import './styles.css' 
+import '../Home/styles.css' 
 import Logo from '../../assets/logo.svg'
 import Cesta from '../../assets/cesta.svg'
 import UserIcon from '../../assets/userIcon.svg'

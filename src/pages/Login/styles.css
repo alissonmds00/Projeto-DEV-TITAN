@@ -1,5 +1,19 @@
-/*body {
-    background: blue;
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: aqua;
+}
+
+header {
+    padding: 2rem 4rem;
+    border-bottom: #E9E9E9 0.2rem solid;
+}
+
+#logo {
+    display: block;
+    height: 4rem;
 }
 
 #loginarea {
@@ -11,8 +25,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 30.99%;
-    margin: 0 auto;
+    width: 40%;
+    margin: 5rem auto;
 
     background: #FFFFFF;
     border: 1px solid #E9E9E9;
@@ -30,15 +44,63 @@
     justify-content: center;
 }
 
+label {
+    padding-top: 1rem;
+}
+
 .login {
+    width: 100%;
     display: flex;
+    justify-content: center;
     border: 3px solid #D9D9D9;
     border-radius: 10px;
 }
 
 .loginitem, .loginitem:hover, .loginitem:focus {
     padding: .6rem 5.7rem;
+    width: 100%;
     border: none;
     outline: none;
     background: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+}
+
+#loginform {
+    width: 100%;
+}
+
+#loginform button {
+    margin-top: 2rem;
+    margin-bottom: 7rem;
+    width: 30%;
+    color: white;
+    height: 3.5rem;
+    background: #A4002E;
+    border: 1px solid #A4002E;
+    border-radius: 10px;
+}
+
+#esqueci {
+    display: flex;
+    justify-content: right;
+    padding: 1rem 0;
+    color: gray;
+}
+
+#registro p {
+    color: var(--gray);
+}
+
+#registro a {
+    color: var(--blue-gray);
 }
