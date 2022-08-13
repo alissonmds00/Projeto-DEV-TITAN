@@ -45,6 +45,46 @@ ul {
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
+    color: #3E6E85;
 }
 
+.medium14 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 
+    color: #000000;
+
+}
+
+.semibold18 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: var(--blue-gray);
+}
+
+.h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+
+    color: #000000;
+}
+
+.rag123 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 73px;
+
+    color: #000000;
+}
