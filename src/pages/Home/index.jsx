@@ -14,12 +14,12 @@ export function Home() {
         </a>
 
         <section id='searchbox'>
-          <input disabled type="search" placeholder='O que você está buscando?'/>
+          <input className='regular18' disabled type="search" placeholder='O que você está buscando?'/>
           <img src={Search} alt="" />
         </section>
 
         <section id='userArea'>
-          <div>
+          <div className='medium14'>
             <img id='userIcon' src={UserIcon} alt="Foto do usuário" />
             <p>
               Bem-vind@!
@@ -34,14 +34,54 @@ export function Home() {
       </header>
 
       <main>
+        <section>
+
+          <div id='areaTitle'>
+            <h2 className='h2'>DESTAQUES DA SEMANA</h2>
+          </div>
+
+          <div id='areaCards'>
+            <div className='Card'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
+              <p className='medium14'>Nome do item nome do item nome do item</p>
+              <p className='h2'>R$ 19,90</p>
+              <button className='medium14'>COMPRAR</button>
+            </div>
+            <div className='Card'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
+              <p className='medium14'>Nome do item nome do item nome do item</p>
+              <p className='h2'>R$ 19,90</p>
+              <button className='medium14'>COMPRAR</button>
+            </div>
+            <div className='Card'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
+              <p className='medium14'>Nome do item nome do item nome do item</p>
+              <p className='h2'>R$ 19,90</p>
+              <button className='medium14'>COMPRAR</button>
+            </div>
+            <div className='Card'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
+              <p className='medium14'>Nome do item nome do item nome do item</p>
+              <p className='h2'>R$ 19,90</p>
+              <button className='medium14'>COMPRAR</button>
+            </div>
+            <div className='Card'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
+              <p className='medium14'>Nome do item nome do item nome do item</p>
+              <p className='h2'>R$ 19,90</p>
+              <button className='medium14'>COMPRAR</button>
+            </div>
+          </div>
+
+        </section>
       </main>
       
       <footer>
         <img src={Logo} alt="" />
-        <p>
+        <p className='regular18'>
           Trabalhe conosco  | Termos e condições | Privacidade | Acessibilidade  | Contato
         </p>
-        <ul>
+        <ul className='medium14'>
           <strong>Acesse nosso projeto</strong>
           <li><a href="https://github.com/alissonmds00" target="_blank">Alisson Matias</a></li>
           <li><a href="https://github.com/guiramos1504" target="_blank">Guilherme Ramos</a></li>
