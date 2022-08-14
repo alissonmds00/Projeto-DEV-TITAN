@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 //import App from '../app'
 import './styles/global.css'
-import { Home } from "./pages/Home"
-//import { Login} from "./pages/Login"
+//import { Home } from "./pages/Home"
+import { Login} from "./pages/Login"
 
 //<Home />
 
@@ -17,6 +17,6 @@ import { Home } from "./pages/Home"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home />
+    <Login />
   </React.StrictMode>
 )

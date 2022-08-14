@@ -1,5 +1,6 @@
 import '../Login/styles.css'
 import Logo from '../../assets/logo.svg'
+import portaLogin from '../../assets/porta_login.svg'
 
 export function Login() {
     return (
@@ -7,6 +8,7 @@ export function Login() {
             <header>
                 <img id='logo' src={Logo} alt="" />
             </header>
+            <img src={portaLogin} alt="" />
             <main>
                 <div id='loginarea'>
                     <div id='titulo'>
@@ -26,9 +28,9 @@ export function Login() {
                                 className='loginitem'
                                 placeholder='Digite a sua senha' />
                         </div>
-                        <a id='esqueci' className='regular18' href="">Esqueci minha senha</a>
+                        <a id='esqueci' className='regular18' href=""><u>Esqueci minha senha</u></a>
                         <div id="button">
-                            <button>Entrar</button>
+                            <button className='h2'>Entrar</button>
                         </div>
                     </form>
                     <div id='registro'>

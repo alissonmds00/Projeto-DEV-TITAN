@@ -2,13 +2,16 @@ html {
     font-size: 62.5%;
 }
 
-body {
-    background-image: url(../../assets/porta_login.svg);
-}
-
 header {
     padding: 2rem 4rem;
     border-bottom: #E9E9E9 0.2rem solid;
+}
+
+.container > img {
+    position: absolute;
+    bottom: 0;
+    left: -8rem;
+    height: 50%;
 }
 
 #logo {
@@ -17,7 +20,7 @@ header {
 }
 
 #loginarea {
-    max-width: 40%;
+    max-width: 35%;
     z-index: 1000;
     padding: 2.1rem 4.4rem 1rem 4.4rem;
     box-sizing: border-box;
@@ -25,12 +28,10 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 40%;
     margin: 5rem auto;
-
     background: #FFFFFF;
     border: 1px solid #E9E9E9;
-    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.20);
     border-radius: 15px;
 }
 
@@ -45,7 +46,7 @@ header {
 }
 
 label {
-    padding-top: 1rem;
+    padding-top: 3rem;
 }
 
 #passwordbar {
@@ -68,6 +69,7 @@ label {
     justify-content: center;
     border: 3px solid #D9D9D9;
     border-radius: 10px;
+    padding:1rem 0.5rem;
 }
 
 .loginitem, .loginitem:hover, .loginitem:focus {
@@ -97,17 +99,16 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 7rem;
-    padding: 2rem;
+    margin: 2rem auto 7rem;
+    padding: 2.5rem;
     width: 40%;
-
     font-size: 1.8rem;
     color: white;
     height: 3.5rem;
     background: #A4002E;
-    border: 1px solid #A4002E;
-    border-radius: 10px;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
 }
 
 #esqueci {
