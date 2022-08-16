@@ -1,7 +1,7 @@
-import '../Home/styles.css' 
+import '../Home/styles.css'
 import Logo from '../../assets/logo.svg'
 import Cesta from '../../assets/cesta.svg'
-import UserIcon from '../../assets/userIcon.svg'
+import userIcon from '../../assets/userIcon.svg'
 import Search from '../../assets/search.svg'
 
 export function Home() {
@@ -12,34 +12,28 @@ export function Home() {
         <a href="">
           <img src={Logo} id="logo" alt="" />
         </a>
-
         <section id='searchbox'>
-          <input className='regular18' disabled type="search" placeholder='O que você está buscando?'/>
+          <input className='regular18' disabled type="search" placeholder='O que você está buscando?' />
           <img src={Search} alt="" />
         </section>
-
         <section id='userArea'>
           <div className='medium14'>
-            <img id='userIcon' src={UserIcon} alt="Foto do usuário" />
+            <img id='userIcon' src={userIcon} alt="Foto do usuário" />
             <p>
               Bem-vind@!
               <a href="">Acesse aqui o seu perfil</a>
             </p>
           </div>
           <a href="">
-            <img src={Cesta} alt="" title='Cesta de compras'/>
+            <img src={Cesta} alt="" title='Cesta de compras' />
           </a>
         </section>
-        
       </header>
-
       <main>
         <section>
-
           <div id='areaTitle'>
             <h2 className='h2'>DESTAQUES DA SEMANA</h2>
           </div>
-
           <div id='areaCards'>
             <div className='Card'>
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
@@ -72,10 +66,8 @@ export function Home() {
               <button className='medium14'>COMPRAR</button>
             </div>
           </div>
-
         </section>
       </main>
-      
       <footer>
         <img src={Logo} alt="" />
         <p className='regular18'>

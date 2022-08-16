@@ -7,6 +7,10 @@ header {
     border-bottom: #E9E9E9 0.2rem solid;
 }
 
+header img {
+    height: 3rem;
+}
+
 .container > img {
     position: absolute;
     bottom: 0;
@@ -19,7 +23,7 @@ header {
     height: 4rem;
 }
 
-#loginarea {
+#loginArea {
     max-width: 35%;
     z-index: 1000;
     padding: 2.1rem 4.4rem 1rem 4.4rem;
@@ -35,7 +39,7 @@ header {
     border-radius: 15px;
 }
 
-#loginform {
+#loginForm {
     display: flex;
     flex-direction: column;
 }
@@ -45,18 +49,14 @@ header {
     justify-content: center;
 }
 
-label {
-    padding-top: 3rem;
-}
-
-#passwordbar {
+#passwordBar {
     background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
     background-position-x: 3%;
     background-position-y: 50%;
 }
 
-#emailbar  {
+#emailBar  {
     background-image: url(../../assets/mail.svg);
     background-repeat: no-repeat;
     background-position-x: 3%;
@@ -72,13 +72,12 @@ label {
     padding:1rem 0.5rem;
 }
 
-.loginitem, .loginitem:hover, .loginitem:focus {
-    padding: .6rem 5.7rem;
+.loginItem, .loginItem:hover, .loginItem:focus {
+    padding: 6rem 5.7rem;
     width: 100%;
     border: none;
     outline: none;
     background: none;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -91,24 +90,29 @@ label {
     justify-content: center;
 }
 
-#loginform {
-    width: 100%;
+#loginForm {
+    width: 90%;
 }
 
-#loginform button {
+#loginForm button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem auto 7rem;
     padding: 2.5rem;
     width: 40%;
-    font-size: 1.8rem;
     color: white;
     height: 3.5rem;
-    background: #A4002E;
+    background: #820a31;
     border: none;
     border-radius: 0.7rem;
     cursor: pointer;
+}
+
+#loginForm button:hover {
+    background-color: #A4002E;
+    color: white;
+    transition: 300ms;
 }
 
 #esqueci {

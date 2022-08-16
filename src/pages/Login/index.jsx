@@ -5,27 +5,24 @@ import portaLogin from '../../assets/porta_login.svg'
 export function Login() {
     return (
         <div className='container'>
-            <header>
-                <img id='logo' src={Logo} alt="" />
-            </header>
             <img src={portaLogin} alt="" />
             <main>
-                <div id='loginarea'>
+                <div id='loginArea'>
                     <div id='titulo'>
                         <h1 className='h2'>Faça seu Login</h1>
                         <p className='semibold18'>Entre com as suas informações de cadastro</p>
                     </div>
-                    <form action="login" id='loginform'>
-                        <label className='semibold18' htmlFor="emailbar">E-mail</label>
+                    <form action="login" id='loginForm'>
+                        <label className='semibold18' htmlFor="emailBar">E-mail</label>
                         <div className='login'>
-                            <input type="email" name="email" id="emailbar" className='loginitem' placeholder='Digite o seu email' autoFocus />
+                            <input type="email" name="email" id="emailBar" className='loginItem' placeholder='Digite o seu email' autoFocus />
                         </div>
                         <label className='semibold18' htmlFor="password">Senha</label>
                         <div className='login'>
                             <input type="password"
                                 name="senha"
-                                id="passwordbar"
-                                className='loginitem'
+                                id="passwordBar"
+                                className='loginItem'
                                 placeholder='Digite a sua senha' />
                         </div>
                         <a id='esqueci' className='regular18' href=""><u>Esqueci minha senha</u></a>
@@ -38,9 +35,6 @@ export function Login() {
                     </div>
                 </div>
             </main>
-            <footer>
-
-            </footer>
         </div>
     )
 }

@@ -1,11 +1,10 @@
+//import App from '../app'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-//import App from '../app'
 import './styles/global.css'
 //import { Home } from "./pages/Home"
-import { Login} from "./pages/Login"
-
-//<Home />
+//import { Login } from "./pages/Login"
+import { Register } from "./pages/Register"
 
 /*ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +16,6 @@ import { Login} from "./pages/Login"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Login />
+    <Register />
   </React.StrictMode>
 )

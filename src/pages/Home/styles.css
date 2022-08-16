@@ -114,7 +114,7 @@ main section {
 }
 
 .Card button:hover {
-    background-color: #A4002E;
+    background-color: #820a31;
     color: white;
     transition: 175ms;
 }

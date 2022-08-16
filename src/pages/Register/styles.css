@@ -1,0 +1,143 @@
+html {
+    font-size: 62.5%;
+}
+
+.container > img {
+    position: absolute;
+    bottom: 0;
+    left: 7rem;
+    height: 60%;
+}
+
+.registro {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5rem auto;
+    background: #FFFFFF;
+    border: 1px solid #E9E9E9;
+    box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.20);
+    border-radius: 15px;
+}
+
+.registro form {
+    width: 100%;
+    padding: 0rem 4rem;
+}
+
+#titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.areaDados {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 65% 35%;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.subAreaDados {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBar {
+    display: flex;
+    justify-content: center;
+    border: #D9D9D9 solid 2px;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+#nome {
+    background-image: url(../../assets/grayUserIcon.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.8rem;
+}
+
+#sobrenome {
+    background-image: url(../../assets/grayUserIcon.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.8rem;
+}
+
+#email {
+    background-image: url(../../assets/mail.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.8rem;
+}
+
+#senha {
+    background-image: url(../../assets/lock.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.5rem;
+}
+
+#cpf {
+    background-image: url(../../assets/ball.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.6rem;
+}
+
+#cep {
+    background-image: url(../../assets/ping.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.4rem;
+}
+
+form section:nth-child(2) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5rem 2rem;
+    justify-content: space-between;
+}
+
+#check {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#check div{
+    display: flex;
+    gap: 1rem;
+}
+
+form section:nth-child(2) button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    width: 40%;
+    color: white;
+    height: 3.5rem;
+    background: #820a31;;
+    border: none;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+form section:nth-child(2) button:hover {
+    background-color: #A4002E;
+    transition: 300ms;
+}
