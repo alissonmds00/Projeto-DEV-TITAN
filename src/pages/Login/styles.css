@@ -66,14 +66,15 @@ header img {
 .login {
     width: 100%;
     display: flex;
+
     justify-content: center;
     border: 3px solid #D9D9D9;
-    border-radius: 10px;
+    border-radius: 1rem;
     padding:1rem 0.5rem;
 }
 
 .loginItem, .loginItem:hover, .loginItem:focus {
-    padding: 6rem 5.7rem;
+    padding: .8rem 5.7rem;
     width: 100%;
     border: none;
     outline: none;
@@ -81,8 +82,8 @@ header img {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
 }
 
 #button {
