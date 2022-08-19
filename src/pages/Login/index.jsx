@@ -13,7 +13,7 @@ export function Login() {
                         <p className='semibold18'>Entre com as suas informações de cadastro</p>
                     </div>
                     <form action="login" id='loginForm'>
-                        <label className='semibold18' htmlFor="emailBar">E-mail</label>
+                        <label className='semibold18' htmlFor="emailBar" onFocus={true}>E-mail</label>
                         <div className='login'>
                             <input type="email" name="email" id="emailBar" className='loginItem' placeholder='Digite o seu email' autoFocus />
                         </div>

@@ -2,6 +2,10 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    overflow: hidden;
+}
+
 header {
     padding: 2rem 4rem;
     border-bottom: #E9E9E9 0.2rem solid;
@@ -24,10 +28,9 @@ header img {
 }
 
 #loginArea {
-    max-width: 35%;
+    max-width: 50%;
     z-index: 1000;
-    padding: 2.1rem 4.4rem 1rem 4.4rem;
-    box-sizing: border-box;
+    padding: 0rem 4.4rem 1rem 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,15 +39,17 @@ header img {
     background: #FFFFFF;
     border: 1px solid #E9E9E9;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.20);
-    border-radius: 15px;
+    border-radius: 1.5rem;
 }
 
 #loginForm {
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 #titulo p, #titulo h1 {
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
 }
@@ -64,6 +69,7 @@ header img {
 }
 
 .login {
+    margin: 2rem 0;
     width: 100%;
     display: flex;
 
@@ -89,10 +95,6 @@ header img {
 #button {
     display: flex;
     justify-content: center;
-}
-
-#loginForm {
-    width: 90%;
 }
 
 #loginForm button {
