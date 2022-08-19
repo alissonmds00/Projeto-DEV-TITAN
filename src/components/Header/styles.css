@@ -1,0 +1,52 @@
+header {
+    padding: 3rem 4rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: #E9E9E9 0.2rem solid;
+}
+
+#logo {
+    display: block;
+    height: 4rem;
+}
+
+#searchbox {
+    width: 45%;
+    height: 4rem;
+    background-color: #E9E9E9;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchbox input, #searchbox input:hover, #searchbox input:focus {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#userArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5rem;
+}
+
+#userArea img {
+    width: 2.8rem;
+}
+
+#userArea div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#userArea p {
+    display: flex;
+    flex-direction: column;
+}

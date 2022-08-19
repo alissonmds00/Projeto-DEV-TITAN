@@ -2,59 +2,6 @@ html {
     font-size: 62.5%;
 }
 
-#logo {
-    display: block;
-    height: 4rem;
-}
-
-header {
-    padding: 3rem 4rem 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: #E9E9E9 0.2rem solid;
-}
-
-#searchbox {
-    width: 45%;
-    height: 4rem;
-    background-color: #E9E9E9;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-#searchbox input, #searchbox input:hover, #searchbox input:focus {
-    width: 100%;
-    background: none;
-    border: none;
-    outline: none;
-}
-
-#userArea {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5rem;
-}
-
-#userArea img {
-    width: 2.8rem;
-}
-
-#userArea div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#userArea p {
-    display: flex;
-    flex-direction: column;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -67,7 +14,6 @@ main section {
 }
 
 #areaTitle {
-    /*background-color: yellow;*/
     padding: 1.5rem 0.5rem;
     display: flex;
     align-items: center;
@@ -80,76 +26,4 @@ main section {
     width: 100%;
     height: 100%;
     padding-left: 3rem;
-}
-
-.Card {
-    display: flex;
-    align-items: center;
-    justify-content:end;
-    gap: 1rem;
-    background-color: white;
-    border-radius: 1.5rem;
-    height: 100%;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    border-top: transparent solid 0.4rem;
-    box-shadow: 0rem 0.5rem 3rem -1rem rgba(0, 0, 0, 18%);
-    transition:175ms
-}
-
-.Card:hover {
-    border-top: #A4002E solid 0.4rem;
-}
-
-.Card button {
-    background-color: transparent;
-    outline: #A4002E solid 0.2rem;
-    color: #A4002E;
-    border: none;
-    width: 95%;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-.Card button:hover {
-    background-color: #820a31;
-    color: white;
-    transition: 175ms;
-}
-
-.Card p {
-    text-align: center;
-}
-
-.Card img {
-    width:100%;
-    border-radius: 00.6rem;
-}
-
-footer {
-    width: 100%;
-    height: 10rem;
-    background-color: #E9E9E9;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 4rem;
-    position: absolute;
-    bottom: 0;
-}
-
-footer span {
-    display: flex;
-    justify-content: center;
-}
-
-footer img {
-    height: 2.5rem;
-}
-
-footer ul li{
-    display: flex;
-    justify-content: right;
 }

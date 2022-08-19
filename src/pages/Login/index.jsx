@@ -1,5 +1,5 @@
 import '../Login/styles.css'
-import Logo from '../../assets/logo.svg'
+import '../../styles/global.css'
 import portaLogin from '../../assets/porta_login.svg'
 
 export function Login() {

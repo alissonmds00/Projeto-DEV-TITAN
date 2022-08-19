@@ -44,7 +44,7 @@ export function Register() {
                             <div id='check'>
                                 <div>
                                     <input type="radio" name="adm" id="" />
-                                    <label htmlFor="">Conta de Usuário</label>
+                                    <label htmlFor="">Conta de Cliente</label>
                                 </div>
                                 <div>
                                     <input type="radio" name="adm" id="" />
