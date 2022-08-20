@@ -1,0 +1,45 @@
+.Card {
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-top: transparent solid 0.4rem;
+    box-shadow: 0rem 0.5rem 3rem -1rem rgba(0, 0, 0, 18%);
+    transition:175ms
+}
+
+.Card:hover {
+    border-top: #A4002E solid 0.4rem;
+}
+
+.Card button {
+    background-color: transparent;
+    outline: #A4002E solid 0.2rem;
+    color: #A4002E;
+    border: none;
+    width: 95%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.Card button:hover {
+    background-color: #A4002E;
+    color: white;
+    transition: 175ms;
+}
+
+.Card p {
+    text-align: center;
+}
+
+.Card img {
+    width:100%;
+    border-radius: 00.6rem;
+}
