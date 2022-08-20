@@ -2,9 +2,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/global.css'
-import { Home } from "./pages/Home"
+//import { Home } from "./pages/Home"
 //import { Login } from "./pages/Login"
-//import { Register } from "./pages/Register"
+//import { Registro } from "./pages/Register"
+import { ProdutoADM } from './pages/ProdutoADM'
+//import { ProdutoADM } from "./pages/ProdutoADM"
 
 /*ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +18,6 @@ import { Home } from "./pages/Home"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home />
+    <ProdutoADM />
   </React.StrictMode>
 )

@@ -1,6 +1,5 @@
 import './styles.css'
 import '../../styles/global.css'
-import Logo from '../../assets/logo.svg'
 import registro from '../../assets/register.svg'
 
 export function Register() {

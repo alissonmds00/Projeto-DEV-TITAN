@@ -55,6 +55,7 @@ ul {
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
+    color: #000000;
 }
 
 .medium10 {
@@ -73,7 +74,7 @@ ul {
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    color: var(--blue-gray);
+    color: var(--dark-gray);
 }
 
 .rag123 {
