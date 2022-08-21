@@ -9,8 +9,8 @@ export function Register() {
             <main>
                 <section className='registro'>
                     <div id='titulo'>
-                        <h1>Realize seu cadastro</h1>
-                        <p>Insira suas informações</p>
+                        <h1 className='h2'>Realize seu cadastro</h1>
+                        <p className='regular14'>Insira suas informações</p>
                     </div>
                     <form action="">
                         <section className='areaDados'>
