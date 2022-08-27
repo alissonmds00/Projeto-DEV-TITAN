@@ -6,15 +6,6 @@ body {
     overflow: hidden;
 }
 
-header {
-    padding: 2rem 4rem;
-    border-bottom: #E9E9E9 0.2rem solid;
-}
-
-header img {
-    height: 3rem;
-}
-
 .container > img {
     position: absolute;
     bottom: 0;
@@ -22,12 +13,12 @@ header img {
     height: 50%;
 }
 
-#logo {
+.logo {
     display: block;
     height: 4rem;
 }
 
-#loginArea {
+.loginArea {
     max-width: 50%;
     z-index: 1000;
     padding: 0rem 4.4rem 1rem 4rem;
@@ -43,26 +34,26 @@ header img {
     border-radius: 1.5rem;
 }
 
-#loginForm {
+.loginForm {
     display: flex;
     flex-direction: column;
     width: 90%;
 }
 
-#titulo p, #titulo h1 {
+.titulo p, .titulo h1 {
     padding: 0.5rem;
     display: flex;
     justify-content: center;
 }
 
-#passwordBar {
+.passwordBar {
     background-image: url(../../assets/lock.svg);
     background-repeat: no-repeat;
     background-position-x: 3%;
     background-position-y: 50%;
 }
 
-#emailBar  {
+.emailBar  {
     background-image: url(../../assets/mail.svg);
     background-repeat: no-repeat;
     background-position-x: 3%;
@@ -93,12 +84,12 @@ header img {
     line-height: 2.2rem;
 }
 
-#button {
+.button {
     display: flex;
     justify-content: center;
 }
 
-#loginForm button {
+.loginForm button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,10 +118,10 @@ header img {
     font-size: 1.2rem;
 }
 
-#registro p {
+.registro p {
     color: var(--gray);
 }
 
-#registro a {
+.registro a {
     color: var(--blue-gray);
 }

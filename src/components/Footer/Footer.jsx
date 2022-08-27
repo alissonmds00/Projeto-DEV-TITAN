@@ -1,14 +1,15 @@
-import './styles.css'
+import styles from './styles.module.css'
+import global from '../../styles/global.module.css'
 import Logo from '../../assets/logo.svg'
 
 export function Footer(){
     return (
         <footer>
             <img src={Logo} alt="" />
-            <p className='regular14'>
+            <p className={global.regular14}>
                 Trabalhe conosco  | Termos e condições | Privacidade | Acessibilidade  | Contato
             </p>
-            <ul className='medium10'>
+            <ul className={global.medium10}>
                 <strong>Acesse nosso projeto</strong>
                 <br />
                 <li><a href="https://github.com/alissonmds00" target="_blank">Alisson Matias</a></li>
