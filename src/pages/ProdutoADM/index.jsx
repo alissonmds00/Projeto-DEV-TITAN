@@ -1,4 +1,4 @@
-import '../ProdutoADM/styles.module.css'
+import styles from '../ProdutoADM/styles.module.css'
 import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
@@ -8,7 +8,7 @@ export function ProdutoADM() {
     return (
         <div className='container'>
             <Header />
-            <section>
+            <section className={styles.section}>
                 <Produto />
                 <div>
                     <form action="" id='areaForm'>
@@ -23,7 +23,7 @@ export function ProdutoADM() {
                                 Descrição do Produto
                             </label>
                             <br />
-                            <textarea name="" id="produtoDescricao" cols="30" rows="7" ></textarea>
+                            <textarea name="" id="produtoDescricao" cols="30" rows="7" value="" ></textarea>
                         </div>
                         <div>
                             <label htmlFor="produtoQuant" className={global.semibold15}>
@@ -34,7 +34,7 @@ export function ProdutoADM() {
                             <label htmlFor="produtoPreco" className={global.semibold15} >
                                 Preço por item
                             </label>
-                            <input type="number" name="" id="produtoQuant" />
+                            <input type="number" name="" id="produtoPreco" className={styles.inputNumber} />
                         </div>
                         <button id='botaoAtualizaEstoque'>
                             Atualizar Produto

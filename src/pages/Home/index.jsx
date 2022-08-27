@@ -9,19 +9,30 @@ export function Home() {
     <div className="container">
       <Header />
       <main className={styles.main}>
-        <section className={styles.mainsection}>
+        <article className={styles.articleMain}>
           <div className={styles.areaTitle}>
-            <h2 className={`${global.h2} ${styles.areaCards}`}>DESTAQUES DA SEMANA</h2>
+            <h2 className={`${global.h2}`}>DESTAQUES DA SEMANA</h2>
           </div>
-          <div id='areaCards'>
-            <Card />
+          <div className={styles.areaCards}>
             <Card />
             <Card />
             <Card />
             <Card />
             <Card />
           </div>
-        </section>
+        </article>
+        <article className={styles.articleMain}>
+          <div className={styles.areaTitle}>
+            <h2 className={`${global.h2}`}>PROMOÇÕES IMPERDÍVEIS</h2>
+          </div>
+          <div className={styles.areaCards}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </article>
       </main>
       <Footer />
     </div>

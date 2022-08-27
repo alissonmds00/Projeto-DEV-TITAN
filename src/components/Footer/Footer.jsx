@@ -4,7 +4,7 @@ import Logo from '../../assets/logo.svg'
 
 export function Footer(){
     return (
-        <footer>
+        <footer className={styles.footer}>
             <img src={Logo} alt="" />
             <p className={global.regular14}>
                 Trabalhe conosco  | Termos e condições | Privacidade | Acessibilidade  | Contato

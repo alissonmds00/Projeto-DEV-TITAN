@@ -1,4 +1,5 @@
 import '../ProdutoUSER/styles.module.css'
+import styles from './styles.module.css'
 import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
@@ -8,12 +9,12 @@ export function ProdutoUSER() {
     return (
         <div className='container'>
             <Header />
-            <section>
+            <section className={styles.section}>
                 <Produto />
                 <div>
                     <div className={global.semibold15}>
                         Nome do produto
-                    </div>;
+                    </div>
                     <div className={global.regular14}>
                         descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo
                     </div>

@@ -9,35 +9,35 @@ export function Login() {
             <main>
                 <div className={styles.loginArea}>
                     <div id={styles.titulo}>
-                        <h1 className={global.h2}>
+                        <h1 className={`${global.h2} ${styles.titulo}`}>
                             Faça seu Login
                         </h1>
-                        <p className={global.semibold15}>
+                        <p className={`${global.semibold15} ${styles.titulo} ${global.blueGray}`}>
                             Entre com as suas informações de cadastro
                         </p>
                     </div>
                     <form action="login" className={styles.loginForm}>
-                        <label className={global.semibold18} htmlFor="emailBar">
+                        <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="emailBar">
                             E-mail
                         </label>
-                        <div className={styles.login}>
+                        <div className={`${styles.login} ${styles.emailBar}`} >
                             <input type="email" name="email" id="emailBar" className={styles.loginItem} placeholder='Digite o seu email' onFocus={true} />
                         </div>
-                        <label className={global.semibold15} htmlFor="password">
+                        <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="password">
                             Senha
                         </label>
-                        <div className={styles.login}>
+                        <div className={`${styles.login} ${styles.passwordBar}`}>
                             <input type="password"
                                 name="senha"
                                 id="passwordBar"
-                                className={`${styles.loginItem}` && `${styles.passwordBar}`}
+                                className={`${styles.loginItem}`}
                                 placeholder='Digite a sua senha' />
                         </div>
                         <a id='esqueci' className={global.regular14} href="">
                             <u>Esqueci minha senha</u>
                         </a>
                         <div id="button">
-                            <button className={`${styles.button}` && `${global.h2}`}>
+                            <button className={`${styles.button} ${global.h2}`}>
                                 Entrar
                             </button>
                         </div>

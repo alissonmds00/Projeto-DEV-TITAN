@@ -1,4 +1,4 @@
-footer {
+.footer {
     width: 100%;
     height: 10rem;
     background-color: #E9E9E9;
@@ -10,16 +10,16 @@ footer {
     margin-top: auto;
 }
 
-footer span {
+.footer span {
     display: flex;
     justify-content: center;
 }
 
-footer img {
+.footer img {
     height: 2.5rem;
 }
 
-footer ul li{
+.footer ul li{
     display: flex;
     justify-content: right;
 }

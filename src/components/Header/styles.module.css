@@ -8,9 +8,16 @@
     gap: 5rem;
 }
 
+.atalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 25%;
+}
+
 .logo {
     display: block;
     height: 4rem;
+    padding-bottom: 0.8rem;
 }
 
 .searchbox {
@@ -29,6 +36,7 @@
     background: none;
     border: none;
     outline: none;
+    padding-top: 1rem;
 }
 
 .userArea {
