@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0rem;
+}
+
+.deletarItem {
+    background-image: url(../../assets/delete.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: 1.8rem;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.nomeProduto {
+    align-items: center;
+    justify-content: left;
+    white-space: nowrap;
+}

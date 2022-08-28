@@ -1,12 +1,12 @@
 import styles from './styles.module.css'
 import global from '../../styles/global.module.css'
 
-export function Card() {
+export function Card(props) {
     return (
         <div className={styles.Card}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Ritalina.JPG" alt="" />
-            <p className={global.medium10}>Nome do item nome do item nome do item</p>
-            <p className={global.h2}>R$ 19,90</p>
+            <img src={props.link} alt="" />
+            <p className={global.medium10}>{props.nome}</p>
+            <p className={global.h2}>R$ {props.valor}</p>
             <button className={global.medium10}>COMPRAR</button>
         </div>
     )

@@ -33,22 +33,22 @@ export function Login() {
                                 className={`${styles.loginItem}`}
                                 placeholder='Digite a sua senha' />
                         </div>
-                        <a id='esqueci' className={global.regular14} href="">
+                        <a id='esqueci' className={`${global.regular14} ${styles.esqueci}`} href="">
                             <u>Esqueci minha senha</u>
                         </a>
                         <div id="button">
-                            <button className={`${styles.button} ${global.h2}`}>
+                            <button id="LoginEntrar" className={`${styles.button} ${global.h2}`}>
                                 Entrar
                             </button>
                         </div>
                     </form>
-                    <div id={global.registro}>
+                    <div className={styles.registro}>
                         <p className={global.semibold15}>
                             Não possui uma conta?
-                            <a href="">
+                        </p>
+                        <a className={global.semibold15} href="http://127.0.0.1:3000/register">
                                 Cadastre-se
                             </a>
-                        </p>
                     </div>
                 </div>
             </main>

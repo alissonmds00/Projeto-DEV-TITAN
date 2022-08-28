@@ -9,10 +9,10 @@ export function Register() {
             <main>
                 <section className={styles.registro}>
                     <div id={styles.titulo}>
-                        <h1 className={global.h2}>
+                        <h1 className={`${global.h2} ${styles.titulo}`}>
                             Realize seu cadastro
                         </h1>
-                        <p className={global.semibold15}>
+                        <p className={`${global.semibold15} ${styles.titulo}`}>
                             Insira suas informações
                         </p>
                     </div>
@@ -24,7 +24,7 @@ export function Register() {
                                 </label>
                                 <input
                                     type="text" name="nome"
-                                    className='inputBar' id="nome"
+                                    className={`${styles.inputBar} ${styles.nome}`} id="nome"
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
@@ -33,7 +33,7 @@ export function Register() {
                                 </label>
                                 <input
                                     type="password" name="senha"
-                                    className={`${styles.inputBar}` && `${styles.senha}`} id="senha"
+                                    className={`${styles.inputBar} ${styles.senha}`} id="senha"
                                     placeholder='Digite sua senha' />
                             </div>
                             <div className={styles.subAreaDados}>
@@ -41,7 +41,7 @@ export function Register() {
                                     Sobrenome
                                 </label>
                                 <input type="text" name="sobrenome"
-                                    className={`${styles.inputBar}` && `${styles.sobrenome}`} id="sobrenome"
+                                    className={`${styles.inputBar} ${styles.sobrenome}`} id="sobrenome"
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
@@ -50,14 +50,14 @@ export function Register() {
                                 </label>
                                 <input
                                     type="number" name="cpf"
-                                    className={`${styles.inputBar}` &&  `${styles.cpf}`} id="cpf"
+                                    className={`${styles.inputBar} ${styles.cpf}`} id="cpf"
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={global.semibold15} htmlFor="email">
                                     E-mail
                                 </label>
-                                <input type="email" name="email" className={`${styles.inputBar}` && `${styles.email}`}  id="email" placeholder='Digite seu email' />
+                                <input type="email" name="email" className={`${styles.inputBar} ${styles.email}`}  id="email" placeholder='Digite seu email' />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={global.semibold15} htmlFor="cep">
@@ -65,7 +65,7 @@ export function Register() {
                                 </label>
                                 <input
                                     type="number" name="cep"
-                                    className={`${styles.inputBar}` && `${styles.cep}`} id="cep"
+                                    className={`${styles.inputBar} ${styles.cep}`} id="cep"
                                     placeholder='Digite aqui' />
                             </div>
                         </section>

@@ -61,6 +61,7 @@ ul {
     font-size: 25px;
     line-height: 39px;
     color: #3E6E85;
+    white-space: nowrap;
 }
 
 .h3 {
@@ -69,6 +70,7 @@ ul {
     font-weight: 600;
     font-size: 20px;
     line-height: 32px;
+    white-space: nowrap;
 }
 
 .regular14 {

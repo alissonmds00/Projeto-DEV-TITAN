@@ -6,7 +6,7 @@ import { Login } from "./src/pages/Login"
 import { Register } from "./src/pages/Register";
 import { ProdutoADM } from "./src/pages/ProdutoADM";
 import { ProdutoUSER } from "./src/pages/ProdutoUSER";
-import { CestaFinal } from "./src/pages/CestaFinal";
+import { Cart } from "./src/pages/Cart";
 
 export default function Routes() {
     return (
@@ -16,7 +16,7 @@ export default function Routes() {
             <Route path="/register" component={Register} />
             <Route path="/admin" component={ProdutoADM} />
             <Route path="/user" component={ProdutoUSER} />
-            <Route path="/cart" component={CestaFinal} />
+            <Route path="/cart" component={Cart} />
         </BrowserRouter>
     )
 } 

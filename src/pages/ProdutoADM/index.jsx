@@ -3,8 +3,15 @@ import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { Produto } from '../../components/Produto/Produto'
+import axios from 'axios'
+import { useState } from 'react'
 
 export function ProdutoADM() {
+/*    const nome = [Name, setName], useState()
+    function aicionarProduto() {
+
+        axios.post(req, res)
+    }*/
     return (
         <div className='container'>
             <Header />
@@ -36,7 +43,7 @@ export function ProdutoADM() {
                             </label>
                             <input type="number" name="" id="produtoPreco" className={styles.inputNumber} />
                         </div>
-                        <button id='botaoAtualizaEstoque'>
+                        <button id='AddProduto'>
                             Atualizar Produto
                         </button>
                     </form>

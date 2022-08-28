@@ -1,0 +1,17 @@
+.main {
+    padding: 2rem 8rem;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.areaItens {
+    width: 50%;
+    height: 300px;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0rem 0.5rem 3rem -1rem rgba(0, 0, 0, 18%);
+    border-left: #A4002E solid 0.3rem;
+    overflow: auto;
+}
