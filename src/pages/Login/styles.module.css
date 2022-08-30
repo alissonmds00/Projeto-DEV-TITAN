@@ -3,11 +3,26 @@
     overflow: hidden;
 }
 
-.container > img {
+.container main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../../assets/cinzaBackground.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+.container > img:nth-child(1) {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+}
+
+.container > img:nth-child(2) {
     position: absolute;
     bottom: 0;
-    left: -8rem;
-    height: 50%;
+    left: -20rem;
+    height: 55%;
 }
 
 .logo {
@@ -16,24 +31,27 @@
 }
 
 .loginArea {
-    max-width: 50%;
-    z-index: 1000;
-    padding: 5% 4.4rem 1rem 4rem;
+    height: 55%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 5rem auto;
     background: #FFFFFF;
     border: 1px solid #E9E9E9;
     box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.20);
-    border-radius: 1.5rem;
+    border-radius: 15px;
+    padding-top: 5rem;
+    gap: 2rem;
+    z-index: 1;
 }
 
 .loginForm {
     display: flex;
     flex-direction: column;
     width: 90%;
+    height: auto;
 }
 
 .titulo {
@@ -80,32 +98,6 @@
     line-height: 2.2rem;
 }
 
-.button {
-    display: flex;
-    justify-content: center;
-}
-
-.loginForm button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto 7rem;
-    padding: 2.5rem;
-    width: 40%;
-    color: white;
-    height: 3.5rem;
-    background: #820a31;
-    border: none;
-    border-radius: 0.7rem;
-    cursor: pointer;
-}
-
-#loginForm button:hover {
-    background-color: #A4002E;
-    color: white;
-    transition: 300ms;
-}
-
 .esqueci {
     display: flex;
     justify-content: right;
@@ -115,6 +107,5 @@
 }
 
 .registro {
-    display: flex;
-    gap: .4rem;
+    white-space: nowrap;
 }

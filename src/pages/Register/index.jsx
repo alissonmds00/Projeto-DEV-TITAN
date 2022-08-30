@@ -1,25 +1,28 @@
 import styles from './styles.module.css'
 import global from '../../styles/global.module.css'
 import registro from '../../assets/register.svg'
+import { Botão } from '../../components/Botão/Botão'
+import Logo from '../../assets/logo.svg'
 
 export function Register() {
     return (
         <div className={styles.container}>
+            <img src={Logo} alt="" />
             <img src={registro} alt="" />
             <main>
                 <section className={styles.registro}>
-                    <div id={styles.titulo}>
-                        <h1 className={`${global.h2} ${styles.titulo}`}>
+                    <div className={styles.titulo}>
+                        <h1 className={global.h2}>
                             Realize seu cadastro
                         </h1>
-                        <p className={`${global.semibold15} ${styles.titulo}`}>
+                        <p className={`${global.semibold15} ${global.blueGray}`}>
                             Insira suas informações
                         </p>
                     </div>
                     <form action="" className={styles.form}>
                         <section className={styles.areaDados}>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="nome">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="nome">
                                     Nome
                                 </label>
                                 <input
@@ -28,7 +31,7 @@ export function Register() {
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="senha">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="senha">
                                     Senha
                                 </label>
                                 <input
@@ -37,7 +40,7 @@ export function Register() {
                                     placeholder='Digite sua senha' />
                             </div>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="sobrenome">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="sobrenome">
                                     Sobrenome
                                 </label>
                                 <input type="text" name="sobrenome"
@@ -45,7 +48,7 @@ export function Register() {
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="cpf">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="cpf">
                                     CPF
                                 </label>
                                 <input
@@ -54,13 +57,13 @@ export function Register() {
                                     placeholder='Digite aqui' />
                             </div>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="email">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="email">
                                     E-mail
                                 </label>
-                                <input type="email" name="email" className={`${styles.inputBar} ${styles.email}`}  id="email" placeholder='Digite seu email' />
+                                <input type="email" name="email" className={`${styles.inputBar} ${styles.email}`} id="email" placeholder='Digite seu email' />
                             </div>
                             <div className={styles.subAreaDados}>
-                                <label className={global.semibold15} htmlFor="cep">
+                                <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="cep">
                                     CEP
                                 </label>
                                 <input
@@ -84,9 +87,9 @@ export function Register() {
                                     </label>
                                 </div>
                             </div>
-                            <button id='botaoCriarConta'>
-                                Criar conta
-                            </button>
+                            <div>
+                                <Botão content="Criar Conta" />
+                            </div>
                         </section>
                     </form>
                 </section>

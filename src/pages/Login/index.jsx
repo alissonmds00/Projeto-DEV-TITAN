@@ -1,10 +1,13 @@
 import styles from '../Login/styles.module.css'
 import global from '../../styles/global.module.css'
 import portaLogin from '../../assets/porta_login.svg'
+import { Botão } from '../../components/Botão/Botão'
+import Logo from '../../assets/logo.svg'
 
 export function Login() {
     return (
         <div className={styles.container}>
+            <img src={Logo} alt="" />
             <img src={portaLogin} alt="" />
             <main>
                 <div className={styles.loginArea}>
@@ -33,22 +36,15 @@ export function Login() {
                                 className={`${styles.loginItem}`}
                                 placeholder='Digite a sua senha' />
                         </div>
-                        <a id='esqueci' className={`${global.regular14} ${styles.esqueci}`} href="">
-                            <u>Esqueci minha senha</u>
-                        </a>
-                        <div id="button">
-                            <button id="LoginEntrar" className={`${styles.button} ${global.h2}`}>
-                                Entrar
-                            </button>
-                        </div>
+                        <Botão content="ENTRAR"/>
                     </form>
                     <div className={styles.registro}>
-                        <p className={global.semibold15}>
+                        <p className={global.regular14}>
                             Não possui uma conta?
-                        </p>
-                        <a className={global.semibold15} href="http://127.0.0.1:3000/register">
+                            <a className={global.semibold15} href="http://127.0.0.1:3000/register">
                                 Cadastre-se
                             </a>
+                        </p>
                     </div>
                 </div>
             </main>
