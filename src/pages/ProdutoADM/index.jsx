@@ -3,6 +3,7 @@ import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { Produto } from '../../components/Produto/Produto'
+import { Botão } from '../../components/Botão/Botão'
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -43,9 +44,7 @@ export function ProdutoADM() {
                             </label>
                             <input type="number" name="" id="produtoPreco" className={styles.inputNumber} />
                         </div>
-                        <button id='AddProduto'>
-                            Atualizar Produto
-                        </button>
+                        <Botão content="Atualizar Produto" />
                     </form>
                 </div>
             </section>

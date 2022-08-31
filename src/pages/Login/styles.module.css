@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 
-.container main {
+.container section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -12,13 +12,13 @@
     background-position-x: right;
 }
 
-.container > img:nth-child(1) {
+.container>img:nth-child(1) {
     position: absolute;
     left: 3rem;
     top: 3rem;
 }
 
-.container > img:nth-child(2) {
+.container>img:nth-child(2) {
     position: absolute;
     bottom: 0;
     left: -20rem;
@@ -32,7 +32,7 @@
 
 .loginArea {
     height: 55%;
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,6 +45,30 @@
     padding-top: 5rem;
     gap: 2rem;
     z-index: 1;
+}
+
+.inputBar {
+    display: flex;
+    justify-content: center;
+    border: #D9D9D9 solid 2px;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+}
+
+.email {
+    background-image: url(../../assets/mail.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.8rem;
+}
+
+.senha {
+    background-image: url(../../assets/lock.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 1rem;
+    background-size: 1.5rem;
 }
 
 .loginForm {
@@ -60,20 +84,7 @@
     justify-content: center;
 }
 
-.passwordBar {
-    background-image: url(../../assets/lock.svg);
-    background-repeat: no-repeat;
-    background-position-x: 3%;
-    background-position-y: 50%;
-}
 
-.emailBar  {
-    padding-top: 1rem;
-    background-image: url(../../assets/mail.svg);
-    background-repeat: no-repeat;
-    background-position-x: 3%;
-    background-position-y: 50%;
-}
 
 .login {
     margin: 2rem 0;
@@ -82,30 +93,10 @@
     justify-content: center;
     border: 3px solid #D9D9D9;
     border-radius: 1rem;
-    padding:0rem 0.5rem;
-}
-
-.loginItem, .loginItem:hover, .loginItem:focus {
-    padding: .8rem 5.7rem;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: none;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 2.2rem;
-}
-
-.esqueci {
-    display: flex;
-    justify-content: right;
-    padding: 1rem 0;
-    color: gray;
-    font-size: 1.2rem;
+    padding: 0rem 0.5rem;
 }
 
 .registro {
     white-space: nowrap;
+    text-align: center;
 }

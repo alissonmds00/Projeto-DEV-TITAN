@@ -4,6 +4,7 @@ import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { Produto } from '../../components/Produto/Produto'
+import { Botão } from '../../components/Botão/Botão'
 
 export function ProdutoUSER() {
     return (
@@ -25,9 +26,7 @@ export function ProdutoUSER() {
                     <div id='preçoItem' className='preçoTelaProduto'>
                         19,90
                     </div>
-                    <button id="adicionaCesta">
-                        Adicionar à Cesta
-                    </button>
+                    <Botão content="Adicionar á Cesta" />
                 </div>
             </section>
             <Footer />
