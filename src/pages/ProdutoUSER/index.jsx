@@ -26,7 +26,7 @@ export function ProdutoUSER() {
                     <div id='preçoItem' className='preçoTelaProduto'>
                         19,90
                     </div>
-                    <Botão content="Adicionar á Cesta" />
+                    <Botão content="Adicionar à Cesta" />
                 </div>
             </section>
             <Footer />

@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import global from '../../styles/global.module.css'
+import { BotãoCard } from '../../components/BotãoCard/BotãoCard'
 
 export function Card(props) {
     return (
@@ -7,7 +8,7 @@ export function Card(props) {
             <img src={props.link} alt="" />
             <p className={global.medium10}>{props.nome}</p>
             <p className={global.h2}>R$ {props.valor}</p>
-            <button className={global.medium10}>COMPRAR</button>
+            <BotãoCard content="Comprar" />
         </div>
     )
 }
