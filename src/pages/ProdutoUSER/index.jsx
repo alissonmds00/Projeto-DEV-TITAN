@@ -5,8 +5,21 @@ import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { Produto } from '../../components/Produto/Produto'
 import { Botão } from '../../components/Botão/Botão'
+import { useEffect } from 'react'
+import { useState } from 'react'
+// import { useParams } from 'react-router-dom'
 
 export function ProdutoUSER() {
+    // const { id } = useParams()
+
+    // const [product, setProduct] = useState({})
+
+    // // useEffect(async () => {
+    // //     tempProduct = await axios.get(`http://localhost:8000/product/${id}`)
+    // //     setProduct(tempProduct)
+    // // }
+    // // )
+
     return (
         <div className='container'>
             <Header />
@@ -14,7 +27,7 @@ export function ProdutoUSER() {
                 <Produto />
                 <div>
                     <div className={global.semibold15}>
-                        Nome do produto
+                        Nome
                     </div>
                     <div className={global.regular14}>
                         descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo descrição do produtdo

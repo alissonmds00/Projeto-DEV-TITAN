@@ -8,7 +8,7 @@ export function Card(props) {
             <img src={props.link} alt="" />
             <p className={global.medium10}>{props.nome}</p>
             <p className={global.h2}>R$ {props.valor}</p>
-            <BotãoCard content="Comprar" />
+            {<BotãoCard /* id={props.id}*/ content="Comprar" />}
         </div>
     )
 }

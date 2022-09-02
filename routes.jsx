@@ -15,7 +15,7 @@ export default function Routes() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/admin" component={ProdutoADM} />
-            <Route path="/user" component={ProdutoUSER} />
+            <Route path="/user/:id" component={ProdutoUSER} /> {/* Adicionei um ":id" no path do produto  */}
             <Route path="/cart" component={Cart} />
         </BrowserRouter>
     )
