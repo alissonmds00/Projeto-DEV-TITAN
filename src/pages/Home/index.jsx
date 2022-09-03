@@ -69,7 +69,6 @@ export function Home() {
             <h2 className={`${global.h2}`}>DESTAQUES DA SEMANA</h2>
           </div>
           <div className={styles.areaCards}>
-            
             {/* {products.map((product) => 
               <a href={`http://localhost:3000/user/${product.id}`}>
                 <Card 
@@ -80,7 +79,6 @@ export function Home() {
                 />
               </a>
             )} */}
-
           </div>
         </article>
         <article className={styles.articleMain}>
