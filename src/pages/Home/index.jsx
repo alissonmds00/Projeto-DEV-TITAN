@@ -8,57 +8,34 @@ import axios from 'axios'
 
 export function Home() {
 
-  // const [products, setProducts] = useState(
-  //   [
-  //     {
-  //       name: "dipirona",
-  //       value: 10,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 1
-  //     },
-  //     {
-  //       name: "durateston",
-  //       value: 40,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 2
-  //     },
-  //     {
-  //       name: "rivotril",
-  //       value: 15,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 3
-  //     },
-  //     {
-  //       name: "teste",
-  //       value: 20,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 4
-  //     },
-  //     {
-  //       name: "dipirona",
-  //       value: 10,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 5
-  //     },
-  //     {
-  //       name: "dipirona",
-  //       value: 10,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 6
-  //     },
-  //     {
-  //       name: "dipirona",
-  //       value: 10,
-  //       image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-  //       id: 7
-  //     },
-  //   ]
-  // )                     DEPOIS APAGAR ISSO E FAZER O "PRODUCTS" COMEÇAR COMO []. O USEEFFECT QUE ADICIONA OS PRODUCTOS AO PRODUCTS
+  
 
   // useEffect(async () => {
-  //   let tempProducts = await axios.get('http://localhost:8000/products')
+  //   let tempProducts = await axios.get(`http://localhost:8000/products`)
   //   setProducts(tempProducts)
   // })
+
+  const [products, setProducts] = useState(
+    [
+      {
+        id: 1,
+        name: "Dipirona Monoidratada 500mg",
+        price: 10,
+        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
+        quantity: 20,
+      },
+      {
+        id: 2,
+        name: "dipirona",
+        price: 20,
+        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
+        quantity: 20,
+      },
+      // DEPOIS APAGAR ISSO E FAZER O "PRODUCTS" COMEÇAR COMO []. O USEEFFECT QUE ADICIONA OS PRODUTOS AO PRODUCTS //
+    ]
+  )
 
   return (
     <div className="container">
@@ -69,16 +46,16 @@ export function Home() {
             <h2 className={`${global.h2}`}>DESTAQUES DA SEMANA</h2>
           </div>
           <div className={styles.areaCards}>
-            {/* {products.map((product) => 
+            {products.map((product) =>
               <a href={`http://localhost:3000/user/${product.id}`}>
-                <Card 
-                link={product.image}
-                nome={product.name}
-                valor={product.value}
-                key={product.id}
+                <Card
+                  image={product.image}
+                  nome={product.name}
+                  price={product.price}
+                  key={product.id}
                 />
               </a>
-            )} */}
+            )}
           </div>
         </article>
         <article className={styles.articleMain}>
