@@ -7,15 +7,15 @@ import { Botão } from '../../components/Botão/Botão'
 import axios from 'axios'
 import { useState } from 'react'
 
-export function ProdutoADM(props) {
+export const ProdutoADM = () => {
     const [produtoNome, setProdutoNome] = useState('')
     const [produtoDesc, setProdutoDesc] = useState('')
     const [produtoValor, setProdutoValor] = useState(5)
     const [produtoQuantidade, setProdutoQuantidade] = useState(1)
     const [produtoImagem, setprodutoImagem] = useState('https://localhost/')
 
-
     function adicionarProduto() {
+        console.log(produtoNome)
         axios.post('http://localhost:8000/products', {
             nome: { produtoNome },
             value: { produtoValor },
@@ -23,7 +23,6 @@ export function ProdutoADM(props) {
             description: { produtoDesc },
             quantity: { produtoQuantidade }
         })
-
     }
     return (
         <div className='container'>
@@ -31,30 +30,30 @@ export function ProdutoADM(props) {
             <section className={styles.section}>
                 <Produto />
                 <div>
-                    <form onSubmit={adicionarProduto()} id='areaForm'>
+                    <form onSubmit={adicionarProduto} name='areaForm'>
                         <div>
                             <label htmlFor="produtoNome" className={global.semibold15}>
                                 Nome do produto
                             </label>
                             <br />
-                            <input type="text" name='produtoNome' id='produtoNome' onChange={setProdutoNome} />
+                            <input type="text" name='produtoNome' value={produtoNome} onChange={(e) => [setProdutoNome(e.target.value), setError('')]} />
                             <br />
                             <label htmlFor="produtoDescricao" className={global.semibold15}>
                                 Descrição do Produto
                             </label>
                             <br />
-                            <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" value="" onChange={setProdutoDesc}></textarea>
+                            <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" value={(produtoDesc)} onChange={(e) => [setProdutoDesc(e.target.value), setError('')]}></textarea>
                         </div>
                         <div>
                             <label htmlFor="produtoQuant" className={global.semibold15}>
                                 Estoque
                             </label>
-                            <input type="number" name="produtoQuant" id="produtoQuant" onChange={setProdutoQuantidade} />
+                            <input type="number" name="produtoQuant" id="produtoQuant" value={produtoQuantidade} onChange={(e) => [setProdutoQuantidade(e.target.value), setError('')]} />
                             <br />
                             <label htmlFor="produtoPreco" className={global.semibold15} >
                                 Preço por item
                             </label>
-                            <input type="number" name="produtoPreco" id="produtoPreco" min={1} className={styles.inputNumber} onChange={setProdutoValor} />
+                            <input type="number" name="produtoPreco" id="produtoPreco" min={1} className={styles.inputNumber} value={produtoValor} onChange={(e) => [setProdutoValor(e.target.value), setError('')]} />
                         </div>
                         <Botão content="Atualizar Produto" />
                     </form>
