@@ -1,12 +1,41 @@
 import styles from '../Cart/styles.module.css'
 import global from '../../styles/global.module.css'
+import imgCesta from '../../assets/cesta_final.svg'
+import axios from 'axios'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { ItemCart } from '../../components/ItemCart/ItemCart'
 import { Botão } from '../../components/Botão/Botão'
-import imgCesta from '../../assets/cesta_final.svg'
+import { useEffect, useState } from 'react'
 
 export function Cart() {
+
+    //  useEffect(async () => {
+    //      let tempCart = await axios.get(`http://localhost:8000/users/id`)
+    //      setCart(tempCart)
+    //  })
+
+    const [cart, setCart] = useState(
+        [
+            {
+                id: 1,
+                name: "Dipitona Monoidratada 500mg",
+                price: 10,
+                image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
+                description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
+                quantity: 2,
+            },
+            {
+                id: 2,
+                name: "Dipitona Monoidratada 1000mg",
+                price: 15,
+                image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
+                description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
+                quantity: 3,
+            },
+        ]
+    )
+
     return (
         <div className={styles.container}>
             <Header />
@@ -17,15 +46,17 @@ export function Cart() {
                             Sua Cesta de Compras
                         </h2>
                         <div>
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
-                            <ItemCart />
+                            {cart.map((itemCart) => 
+                                <ItemCart
+                                    image={itemCart.image}
+                                    name={itemCart.name}
+                                    price={itemCart.price}
+                                    quantity={itemCart.quantity}
+                                    description={itemCart.description}
+                                    key={itemCart.id}
+                                />
+                            )
+                            }
                         </div>
                     </article>
                 </div>

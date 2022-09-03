@@ -3,6 +3,13 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 0rem;
+    justify-content: space-between;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .deletarItem {
