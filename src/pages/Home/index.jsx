@@ -50,7 +50,7 @@ export function Home() {
               <a href={`http://localhost:3000/user/${product.id}`}>
                 <Card
                   image={product.image}
-                  nome={product.name}
+                  name={product.name}
                   price={product.price}
                   key={product.id}
                 />

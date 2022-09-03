@@ -10,15 +10,15 @@ import { useState } from 'react'
 export const ProdutoADM = () => {
     const [produtoNome, setProdutoNome] = useState('')
     const [produtoDesc, setProdutoDesc] = useState('')
-    const [produtoValor, setProdutoValor] = useState(5)
-    const [produtoQuantidade, setProdutoQuantidade] = useState(1)
+    const [produtoValor, setProdutoValor] = useState()
+    const [produtoQuantidade, setProdutoQuantidade] = useState()
     const [produtoImagem, setprodutoImagem] = useState('https://localhost/')
 
     function adicionarProduto() {
         console.log(produtoNome)
         axios.post('http://localhost:8000/products', {
             nome: { produtoNome },
-            value: { produtoValor },
+            price: { produtoValor },
             image: {},
             description: { produtoDesc },
             quantity: { produtoQuantidade }
