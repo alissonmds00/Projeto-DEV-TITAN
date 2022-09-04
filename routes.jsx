@@ -8,6 +8,9 @@ import { ProdutoADM } from "./src/pages/ProdutoADM";
 import { ProdutoUSER } from "./src/pages/ProdutoUSER";
 import { Cart } from "./src/pages/Cart";
 
+export const apiProdutos = 'https://www.google.com'
+export const apiUsuarios = 'https://www.google.com'
+
 export default function Routes() {
     return (
         <BrowserRouter>

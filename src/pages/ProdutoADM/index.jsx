@@ -15,7 +15,6 @@ export const ProdutoADM = () => {
     const [produtoImagem, setprodutoImagem] = useState('https://localhost/')
 
     function adicionarProduto() {
-        console.log(produtoNome)
         axios.post('http://localhost:8000/products', {
             nome: { produtoNome },
             price: { produtoValor },
