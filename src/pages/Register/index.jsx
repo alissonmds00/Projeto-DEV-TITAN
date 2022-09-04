@@ -113,13 +113,13 @@ export function Register() {
                         <section>
                             <div onChange={(e) => setAdmin(e.target.value == 'true')} className={styles.inputCheckContas}>
                                 <div>
-                                    <input type="radio" name="adm" id="adm1" value="false"/>
+                                    <input className={styles.radio} type="radio" name="adm" id="adm1" value="false"/>
                                     <label className={global.regular14} for="adm1">
                                         Conta de Cliente
                                     </label>
                                 </div>
                                 <div>
-                                    <input type="radio" name="adm" id="adm2" value="true"/>
+                                    <input className={styles.radio} type="radio" name="adm" id="adm2" value="true"/>
                                     <label className={global.regular14} for="adm2">
                                         Conta de Administrador
                                     </label>
