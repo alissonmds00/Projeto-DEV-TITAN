@@ -5,7 +5,7 @@ import { Botão } from '../../components/Botão/Botão'
 import Logo from '../../assets/logo.svg'
 import { useState } from 'react'
 import axios from 'axios'
-const API = 'http//'
+const API = 'http://localhost:8000/user/register'
 
 
 export function Register() {
@@ -13,19 +13,20 @@ export function Register() {
     const [sobrenome, setSobrenome] = useState('')
     const [senha, setSenha] = useState('')
     const [email, setEmail] = useState('')
-    const [cep, setCep] = useState()
-    const [cpf, setCpf] = useState()
-    const [admin, setAdmin] = useState('false')
+    const [cep, setCep] = useState('')
+    const [cpf, setCpf] = useState('')
+    const [admin, setAdmin] = useState(false)
 
-    function Cadastrar() {
+    function Cadastrar(e) {
+        e.preventDefault()
         axios.post(API, {
-            name: { nome },
-            lastname: { sobrenome },
-            password: { senha },
-            email: { email },
-            cep: { cep },
-            cpf: { cpf },
-            admin: { admin }
+            name: nome,
+            lastname: sobrenome,
+            password: senha,
+            email: email,
+            cep: cep,
+            cpf: cpf,
+            admin: admin
         })
     }
     return (
@@ -53,8 +54,7 @@ export function Register() {
                                     className={`${styles.inputBar} ${styles.nome}`} id="nome"
                                     placeholder='Digite aqui'
                                     value={nome}
-                                    onFocus
-                                    onChange={(e) => [setNome(e.target.value)]} />
+                                    onChange={(e) => setNome(e.target.value)} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="senha">
@@ -65,7 +65,7 @@ export function Register() {
                                     className={`${styles.inputBar} ${styles.senha}`} id="senha"
                                     placeholder='Digite sua senha'
                                     value={senha}
-                                    onChange={(e) => [setSenha(e.target.value)]} />
+                                    onChange={(e) => setSenha(e.target.value)} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="sobrenome">
@@ -75,18 +75,18 @@ export function Register() {
                                     className={`${styles.inputBar} ${styles.sobrenome}`} id="sobrenome"
                                     placeholder='Digite aqui'
                                     value={sobrenome}
-                                    onChange={(e) => [setSobrenome(e.target.value)]} />
+                                    onChange={(e) => setSobrenome(e.target.value)} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="cpf">
                                     CPF
                                 </label>
                                 <input
-                                    type="number" name="cpf"
+                                    type="text" name="cpf"
                                     className={`${styles.inputBar} ${styles.cpf}`} id="cpf"
                                     placeholder='Digite aqui'
                                     value={cpf}
-                                    onChange={(e) => [setCpf(e.target.value)]} />
+                                    onChange={(e) => setCpf(e.target.value)} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="email">
@@ -96,7 +96,7 @@ export function Register() {
                                     id="email"
                                     placeholder='Digite seu email'
                                     value={email}
-                                    onChange={(e) => [setEmail(e.target.value)]}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                             </div>
                             <div className={styles.subAreaDados}>
@@ -104,23 +104,23 @@ export function Register() {
                                     CEP
                                 </label>
                                 <input
-                                    type="number" name="cep"
+                                    type="text" name="cep"
                                     className={`${styles.inputBar} ${styles.cep}`} id="cep"
                                     placeholder='Digite aqui'
-                                    onChange={(e) => [setCep(e.target.value)]} />
+                                    onChange={(e) => setCep(e.target.value)} />
                             </div>
                         </section>
                         <section>
-                            <div className={styles.inputCheckContas}>
+                            <div onChange={(e) => setAdmin(e.target.value == 'true')} className={styles.inputCheckContas}>
                                 <div>
-                                    <input type="radio" name="adm" id="" value={true} checked onChange={(e) => [setAdmin(e.target.value)]} />
-                                    <label className={global.regular14} htmlFor="">
+                                    <input type="radio" name="adm" id="adm1" value="false"/>
+                                    <label className={global.regular14} for="adm1">
                                         Conta de Cliente
                                     </label>
                                 </div>
                                 <div>
-                                    <input type="radio" name="adm" value={true} onChange={(e) => [setAdmin(e.target.value)]}/>
-                                    <label className={global.regular14} htmlFor="">
+                                    <input type="radio" name="adm" id="adm2" value="true"/>
+                                    <label className={global.regular14} for="adm2">
                                         Conta de Administrador
                                     </label>
                                 </div>
