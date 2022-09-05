@@ -1,0 +1,18 @@
+.section {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#areaForm textarea, input {
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.inputNumber {
+    width: 6rem;
+}

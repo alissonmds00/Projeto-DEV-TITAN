@@ -7,7 +7,7 @@ import { Botão } from '../../components/Botão/Botão'
 import axios from 'axios'
 import { useState } from 'react'
 
-export const ProdutoADM = () => {
+export const NovoProduto = () => {
     const [produtoNome, setProdutoNome] = useState('')
     const [produtoDesc, setProdutoDesc] = useState('')
     const [produtoValor, setProdutoValor] = useState()
@@ -59,8 +59,10 @@ export const ProdutoADM = () => {
                                 Preço Unitário
                             </label>
                             <input type="number" name="produtoPreco" id="produtoPreco" min={1} className={styles.inputNumber} value={produtoValor} onChange={(e) => [setProdutoValor(e.target.value), setError('')]} />
+                            <label htmlFor="">
+                            </label>
                         </div>
-                        <Botão content="Atualizar Produto" />
+                        <Botão content="Adicionar Produto" />
                     </form>
                 </div>
             </section>

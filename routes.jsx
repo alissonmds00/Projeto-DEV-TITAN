@@ -7,6 +7,7 @@ import { Register } from "./src/pages/Register";
 import { ProdutoADM } from "./src/pages/ProdutoADM";
 import { ProdutoUSER } from "./src/pages/ProdutoUSER";
 import { Cart } from "./src/pages/Cart";
+import { NovoProduto } from "./src/pages/NovoProduto";
 
 export const apiProdutos = 'https://www.google.com'
 export const apiUsuarios = 'https://www.google.com'
@@ -18,8 +19,9 @@ export default function Routes() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/admin" component={ProdutoADM} />
-            <Route path="/user/:id" component={ProdutoUSER} /> {/* Adicionei um ":id" no path do produto  */}
+            <Route path="/product/:id" component={ProdutoUSER} /> {/* os 2 pontos significa que ele espera uma variável ID  */}
             <Route path="/cart" component={Cart} />
+            <Route path="/add" component={NovoProduto} />
         </BrowserRouter>
     )
 } 

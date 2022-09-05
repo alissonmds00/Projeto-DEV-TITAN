@@ -27,11 +27,11 @@ export function Home() {
       },
       {
         id: 2,
-        name: "dipirona",
+        name: "Dipirona Monoidratada 1000mg",
         price: 20,
-        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
+        image: "https://uploads.consultaremedios.com.br/product_variation_images/full/381836aa361a2211eda8f29e0a0dd87cf0d16a27.jpg?1653565706",
         description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-        quantity: 20,
+        quantity: 17,
       },
       // DEPOIS APAGAR ISSO E FAZER O "PRODUCTS" COMEÇAR COMO []. O USEEFFECT QUE ADICIONA OS PRODUTOS AO PRODUCTS //
     ]
@@ -47,7 +47,7 @@ export function Home() {
           </div>
           <div className={styles.areaCards}>
             {products.map((product) =>
-              <a href={`http://localhost:3000/user/${product.id}`}>
+              <a href={`http://localhost:3000/product/${product.id}`}>
                 <Card
                   image={product.image}
                   name={product.name}
@@ -56,13 +56,6 @@ export function Home() {
                 />
               </a>
             )}
-          </div>
-        </article>
-        <article className={styles.articleMain}>
-          <div id='promocoes' className={styles.areaTitle}>
-            <h2 className={`${global.h2}`}>PROMOÇÕES IMPERDÍVEIS</h2>
-          </div>
-          <div className={styles.areaCards}>
           </div>
         </article>
       </main>
