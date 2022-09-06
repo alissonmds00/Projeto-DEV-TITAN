@@ -3,6 +3,7 @@ import global from '../../styles/global.module.css'
 import portaLogin from '../../assets/porta_login.svg'
 import Logo from '../../assets/logo.svg'
 import { Botão } from '../../components/Botão/Botão'
+import store from '../../store'
 
 export function Login() {
     return (
