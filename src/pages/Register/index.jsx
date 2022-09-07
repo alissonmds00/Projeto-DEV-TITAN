@@ -29,6 +29,13 @@ export function Register() {
             cpf: cpf,
             admin: admin
         })
+        .then(response => {
+            localStorage.setItem('user', JSON.stringify(response.data))
+            store.dispatch({type: 'login', data: response.data})
+            alert('Cadastro efetuado com sucesso!')
+            window.location.href = "http://localhost:3000"
+        })
+        .catch(e => alert(e))
     }
 
     useEffect(() => {
