@@ -21,8 +21,9 @@ export function Login() {
             var response = await axios.post(`http://localhost:8000/users/login`, form)
             localStorage.setItem('user', JSON.stringify(response.data))
             store.dispatch({type: 'login', data: response.data})
+            alert('Login efetuado com sucesso!')
             window.location.href = "http://localhost:3000"
-        }catch(e){alert(e); alert(response)};
+        }catch(e){alert(e.response.data)}
     }
 
     useEffect(() => {

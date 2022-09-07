@@ -8,8 +8,15 @@ import Exit from '../../assets/exit-icon.svg'
 import Mainpage from '../../assets/home.svg'
 import store from '../../store'
 import { BotãoCard } from '../BotãoCard/BotãoCard'
+import { useEffect } from 'react'
+import starting from '../../functions/starting'
 
 export function Header() {
+
+  useEffect(() => {
+    starting()
+  }, [])
+
   function logout() {
     store.dispatch({ type: 'logout' })
     localStorage.removeItem('user')
@@ -33,12 +40,12 @@ export function Header() {
         {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
         
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
-          <p>
+          <div>
             {store.getState().user ? `Bem-vind@! ${store.getState().user.name}` : 'Você ainda não está logad@.'}
             <p>
               {store.getState().user ? 'Acesse aqui o seu perfil' : ''}
             </p>
-          </p>
+          </div>
         </div>
         <a href="http://localhost:3000/cart">
           <img src={Cesta} alt="" title='Cesta de Compras' />

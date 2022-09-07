@@ -136,6 +136,9 @@ export function Register() {
                             </div>
                         </section>
                     </form>
+                    <p className={global.regular14}>
+                        Já possui uma conta? <a className={global.semibold15} href="http://127.0.0.1:3000/login">Faça login</a>
+                    </p>
                 </section>
             </main>
             <footer>
