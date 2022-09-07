@@ -7,10 +7,14 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import starting from '../../functions/starting'
 import store from '../../store'
+import { useHistory } from 'react-router-dom'
 const API = 'http://localhost:8000/users/register'
 
 
 export function Register() {
+
+    const history = useHistory()
+
     const [nome, setNome] = useState('')
     const [sobrenome, setSobrenome] = useState('')
     const [senha, setSenha] = useState('')

@@ -8,7 +8,7 @@ export function Card(props) {
             <img src={props.image}  alt="" />
             <p className={`${global.semibold15} ${global.darkGray}`}>{props.name}</p>
             <p className={global.h2}>R$ {props.price.toFixed(2).replace(".",",")}</p>
-            {<BotãoCard /* id={props.id}*/ content="Comprar" />}
+            {<BotãoCard /* id={props.id}*/ content={props.content} />}
         </div>
     )
 }

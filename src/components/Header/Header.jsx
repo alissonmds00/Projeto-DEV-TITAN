@@ -43,7 +43,7 @@ export function Header() {
       <section className={styles.userArea}>
         <div className={global.medium10}>
 
-        {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
+        {store.getState().user && store.getState().user.admin && <a onClick={() => history.push(`/add`)}><BotãoCard content="Adicionar Prod."/></a>}
       
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>

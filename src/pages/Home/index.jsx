@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import starting from '../../functions/starting'
 import { useHistory } from 'react-router-dom'
+import store from '../../store'
 
 
 export function Home() {
@@ -56,6 +57,7 @@ export function Home() {
                   image={product.image}
                   name={product.name}
                   price={product.price}
+                  content={store.getState().user && store.getState().user.admin ? 'Editar' : 'Comprar'}
                 />
               </a>
             )}
