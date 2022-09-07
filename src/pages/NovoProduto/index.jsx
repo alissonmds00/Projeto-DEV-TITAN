@@ -6,6 +6,8 @@ import { Produto } from '../../components/Produto/Produto'
 import { Botão } from '../../components/Botão/Botão'
 import axios from 'axios'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import starting from '../../functions/starting'
 
 export const NovoProduto = () => {
     const [produtoNome, setProdutoNome] = useState('')
@@ -13,6 +15,10 @@ export const NovoProduto = () => {
     const [produtoValor, setProdutoValor] = useState()
     const [produtoQuantidade, setProdutoQuantidade] = useState()
     const [produtoImagem, setProdutoImagem] = useState('')
+
+    useEffect(() => {
+        starting()
+    }, [])
 
     function adicionarProduto() {
         axios.post('http://localhost:8000/products', {

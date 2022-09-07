@@ -6,8 +6,16 @@ import userIcon from '../../assets/userIcon.svg'
 import Search from '../../assets/search.svg'
 import Exit from '../../assets/exit-icon.svg'
 import Mainpage from '../../assets/home.svg'
+import store from '../../store'
 
 export function Header() {
+
+  function logout(){
+    store.dispatch({type: 'logout'})
+    localStorage.removeItem('user')
+    window.location.href = "http://localhost:3000/login"
+  }
+
   return (
     <header className={styles.header}>
       <a href="http://localhost:3000/" className={styles.atalho}>
@@ -23,7 +31,7 @@ export function Header() {
         <div className={global.medium10}>
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <p>
-            Bem-vind@!
+            Bem-vind@! {store.getState().user.name}
             <p>
               Acesse aqui o seu perfil
             </p>
@@ -32,7 +40,7 @@ export function Header() {
         <a href="http://localhost:3000/cart">
           <img src={Cesta} alt="" title='Cesta de Compras' />
         </a>
-        <a href="http://localhost:3000/login">
+        <a className={styles.toHover} onClick={logout}>
           <img src={Exit} title="Sair da conta" />
         </a>
       </section>

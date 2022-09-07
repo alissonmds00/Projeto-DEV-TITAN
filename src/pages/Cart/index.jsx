@@ -7,14 +7,15 @@ import { Footer } from '../../components/Footer/Footer'
 import { ItemCart } from '../../components/ItemCart/ItemCart'
 import { Botão } from '../../components/Botão/Botão'
 import { useEffect, useState } from 'react'
+import starting from '../../functions/starting'
 
 export function Cart() {
 
-    //  useEffect(async () => {
+     useEffect(() => {
+        starting()
     //      let tempCart = await axios.get(`http://localhost:8000/users/id`)
     //      setCart(tempCart)
-
-    //  })
+     }, [])
 
     const [cart, setCart] = useState(
         [

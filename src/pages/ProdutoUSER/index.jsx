@@ -8,6 +8,7 @@ import { Botão } from '../../components/Botão/Botão'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import starting from '../../functions/starting'
 
 export function ProdutoUSER() {
     const { id } = useParams()
@@ -21,11 +22,11 @@ export function ProdutoUSER() {
         stock: 11,
     })
 
-    // // useEffect(async () => {
-    // //     tempProduct = await axios.get(`http://localhost:8000/product/${id}`)
-    // //     setProduct(tempProduct)
-    // // }
-    // // )
+    useEffect(async () => {
+        // tempProduct = await axios.get(`http://localhost:8000/products/${id}`)
+        // setProduct(tempProduct)
+        starting()
+    }, [])
 
     return (
         <div className='container'>

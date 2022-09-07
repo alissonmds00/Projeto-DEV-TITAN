@@ -3,9 +3,10 @@ import global from '../../styles/global.module.css'
 import registro from '../../assets/register.svg'
 import { Botão } from '../../components/Botão/Botão'
 import Logo from '../../assets/logo.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-const API = 'http://localhost:8000/user/register'
+import starting from '../../functions/starting'
+const API = 'http://localhost:8000/users/register'
 
 
 export function Register() {
@@ -29,6 +30,11 @@ export function Register() {
             admin: admin
         })
     }
+
+    useEffect(() => {
+        starting()
+    }, [])
+
     return (
         <div className={styles.container}>
             <img src={Logo} alt="" />
@@ -114,13 +120,13 @@ export function Register() {
                             <div onChange={(e) => setAdmin(e.target.value == 'true')} className={styles.inputCheckContas}>
                                 <div>
                                     <input className={styles.radio} type="radio" name="adm" id="adm1" value="false"/>
-                                    <label className={global.regular14} for="adm1">
+                                    <label className={global.regular14} htmlFor="adm1">
                                         Conta de Cliente
                                     </label>
                                 </div>
                                 <div>
                                     <input className={styles.radio} type="radio" name="adm" id="adm2" value="true"/>
-                                    <label className={global.regular14} for="adm2">
+                                    <label className={global.regular14} htmlFor="adm2">
                                         Conta de Administrador
                                     </label>
                                 </div>

@@ -5,15 +5,17 @@ import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import starting from '../../functions/starting'
 
 export function Home() {
 
   
 
-  // useEffect(async () => {
-  //   let tempProducts = await axios.get(`http://localhost:8000/products`)
-  //   setProducts(tempProducts)
-  // })
+  useEffect(() => {
+    // let tempProducts = await axios.get(`http://localhost:8000/products`)
+    // setProducts(tempProducts)
+    starting()
+  }, [])
 
   const [products, setProducts] = useState(
     [
@@ -47,12 +49,11 @@ export function Home() {
           </div>
           <div className={styles.areaCards}>
             {products.map((product) =>
-              <a href={`http://localhost:3000/product/${product.id}`}>
+              <a href={`http://localhost:3000/product/${product.id}`} key={product.id}>
                 <Card
                   image={product.image}
                   name={product.name}
                   price={product.price}
-                  key={product.id}
                 />
               </a>
             )}

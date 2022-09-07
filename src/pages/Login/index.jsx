@@ -4,8 +4,31 @@ import portaLogin from '../../assets/porta_login.svg'
 import Logo from '../../assets/logo.svg'
 import { Botão } from '../../components/Botão/Botão'
 import store from '../../store'
+import axios from 'axios'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import starting from '../../functions/starting'
 
 export function Login() {
+    const [form, setForm] = useState({
+        email: '',
+        password: ''
+    })
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try{
+            var response = await axios.post(`http://localhost:8000/users/login`, form)
+            localStorage.setItem('user', JSON.stringify(response.data))
+            store.dispatch({type: 'login', data: response.data})
+            window.location.href = "http://localhost:3000"
+        }catch(e){alert(e); alert(response)};
+    }
+
+    useEffect(() => {
+        starting()
+    }, [])
+
     return (
         <div className={styles.container}>
             <img src={Logo} alt="" />
@@ -20,19 +43,32 @@ export function Login() {
                             Entre com as suas informações de cadastro
                         </p>
                     </div>
-                    <form action="login" className={styles.loginForm}>
+                    <form onSubmit={handleSubmit} className={styles.loginForm}>
                         <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="email">
                             E-mail
                         </label>
-                        <input type="email" name="email" className={`${styles.inputBar} ${styles.email}`} id="email" placeholder='Digite seu email' />
+                        <input 
+                            type="email" 
+                            name="email" 
+                            className={`${styles.inputBar} ${styles.email}`} 
+                            id="email" 
+                            placeholder='Digite seu email'
+                            value={form.email}
+                            onChange={e => setForm({...form, email: e.target.value})}
+                        />
                         
                         <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="senha">
                             Senha
                         </label>
                         <input
-                            type="password" name="senha"
-                            className={`${styles.inputBar} ${styles.senha}`} id="senha"
-                            placeholder='Digite sua senha' />
+                            type="password" 
+                            name="senha"
+                            className={`${styles.inputBar} ${styles.senha}`} 
+                            id="senha"
+                            placeholder='Digite sua senha'
+                            value={form.password}
+                            onChange={e => setForm({...form, password: e.target.value})} 
+                        />
 
                         <Botão content="ENTRAR" />
                     </form>
