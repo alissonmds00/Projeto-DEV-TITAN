@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import starting from '../../functions/starting'
+import store from '../../store'
 
 export function ProdutoUSER() {
     const { id } = useParams()
@@ -54,7 +55,7 @@ export function ProdutoUSER() {
                         <div id='preçoItem' className={`${global.preçoTelaProduto} ${global.blueGray}`}>
                             R$ {product.price.toFixed(2).replace(".", ",")}
                         </div>
-                        <Botão content="Adicionar à Cesta" />
+                        <Botão onClick={() => {store.dispatch({type: 'login', data: {name: 'Mazur'}}); console.log(store.getState())}} content="Adicionar à Cesta" />
                     </div>
                 </div>
             </section>

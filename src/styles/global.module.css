@@ -41,6 +41,7 @@ body {
 a {
     text-decoration: none;
     color: #A4002E;
+    cursor: pointer;
 }
 
 ul {

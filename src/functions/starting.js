@@ -1,15 +1,14 @@
 import store from "../store";
 
-export default function starting(){
-    console.log(store.getState().user);
+export default async function starting(){
     if (!store.getState().user){
         const loggedInUser = localStorage.getItem("user");
-        console.log(loggedInUser);
         if (loggedInUser) {
             const foundUser = JSON.parse(loggedInUser);
             store.dispatch({type: 'login', data: foundUser});
         }
     }
+    console.log(store.getState().user);
     switch (window.location.pathname){
         case '/login':
             if (store.getState().user) window.location.pathname = '/'

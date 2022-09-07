@@ -8,13 +8,17 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import starting from '../../functions/starting'
+import { useHistory } from 'react-router-dom'
+
 
 export function Login() {
     const [form, setForm] = useState({
         email: '',
         password: ''
     })
-
+    
+    const history = useHistory()
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
@@ -22,7 +26,7 @@ export function Login() {
             localStorage.setItem('user', JSON.stringify(response.data))
             store.dispatch({type: 'login', data: response.data})
             alert('Login efetuado com sucesso!')
-            window.location.href = "http://localhost:3000"
+            history.push("/")
         }catch(e){alert(e.response.data)}
     }
 
@@ -77,7 +81,7 @@ export function Login() {
                         <p className={global.regular14}>
                             Não possui uma conta?
                             <br />
-                            <a className={global.semibold15} href="http://127.0.0.1:3000/register">
+                            <a className={global.semibold15} onClick={() => history.push(`/register`)}>
                                 Cadastre-se
                             </a>
                         </p>
