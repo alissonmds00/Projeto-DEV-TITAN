@@ -1,5 +1,5 @@
 .produtoIMG {
-    width: 100%;
+    width: auto;
     background-color: white;
     border-radius: 1rem;
     padding: 1rem;
@@ -9,5 +9,5 @@
 
 .produtoIMG img {
     border-radius: 0.5rem;
-    width: 100%;
+    height: 100%;
 }

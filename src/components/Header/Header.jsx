@@ -7,9 +7,9 @@ import Search from '../../assets/search.svg'
 import Exit from '../../assets/exit-icon.svg'
 import Mainpage from '../../assets/home.svg'
 import store from '../../store'
+import { BotãoCard } from '../BotãoCard/BotãoCard'
 
 export function Header() {
-
   function logout() {
     store.dispatch({ type: 'logout' })
     localStorage.removeItem('user')
@@ -29,6 +29,9 @@ export function Header() {
       </section>
       <section className={styles.userArea}>
         <div className={global.medium10}>
+
+        {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
+        
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <p>
             {store.getState().user ? `Bem-vind@! ${store.getState().user.name}` : 'Você ainda não está logad@.'}

@@ -3,11 +3,11 @@
     justify-content: center;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto 1rem;
-    padding: 2.5rem;
-    width: auto;
+    margin: 2rem auto rem;
+    padding: auto auto;
+    width: 16rem;
     color: #A4002E;
-    height: 3.5rem;
+    height: 4rem;
     background: white;
     border: solid 2px #A4002E;
     border-radius: 0.7rem;
