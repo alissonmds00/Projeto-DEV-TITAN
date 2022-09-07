@@ -11,11 +11,11 @@ import starting from '../../functions/starting'
 
 export function Cart() {
 
-     useEffect(() => {
+    useEffect(() => {
         starting()
-    //      let tempCart = await axios.get(`http://localhost:8000/users/id`)
-    //      setCart(tempCart)
-     }, [])
+        //      let tempCart = await axios.get(`http://localhost:8000/users/id`)
+        //      setCart(tempCart)
+    }, [])
 
     const [cart, setCart] = useState(
         [
@@ -65,17 +65,17 @@ export function Cart() {
                 <div>
                     <div>
                         <h3 className={`${global.h3} ${global.darkGray}`}>TOTAL DA COMPRA</h3>
-                        <p className={`${global.preçoTelaProduto} ${global.blueGray}`}> 
-                        R$ {
-                            cart.reduce((amount, current, idx) => {
+                        <p className={`${global.preçoTelaProduto} ${global.blueGray}`}>
+                            R$ {
+                                cart.reduce((amount, current, idx) => {
                                 if(idx == 1) return amount.price*amount.quantity + current.price*current.quantity
                                 return amount + current.price*current.quantity
                             }).toFixed(2).replace(".",",")
-                        }
+                            }
                         </p>
                         <Botão
                             content='Finalizar Compra'
-                            // Enviar pro backend o cart do usuário
+                        // Enviar pro backend o cart do usuário
                         />
                     </div>
                     <img className={styles.imgCesta} src={imgCesta} />

@@ -44,10 +44,13 @@ export function Header() {
         <div className={global.medium10}>
 
         {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
-        
+      
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
+            <p>
+            {console.log(store)}
             {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
+            </p>
             <p>
               {user ? 'Acesse aqui o seu perfil' : ''}
             </p>

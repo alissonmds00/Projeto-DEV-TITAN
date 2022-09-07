@@ -58,10 +58,14 @@
     gap: 1rem;
 }
 
-.userArea p {
-    white-space: nowrap;
+.userArea div div {
     display: flex;
     flex-direction: column;
+    gap: 0rem;
+}
+
+.userArea p {
+    white-space: nowrap;
 }
 
 .toHover:hover {
