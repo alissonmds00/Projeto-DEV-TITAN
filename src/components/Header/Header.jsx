@@ -7,6 +7,7 @@ import Search from '../../assets/search.svg'
 import Exit from '../../assets/exit-icon.svg'
 import Mainpage from '../../assets/home.svg'
 import store from '../../store'
+import { BotãoCard } from '../BotãoCard/BotãoCard'
 import { useEffect } from 'react'
 import starting from '../../functions/starting'
 import { useState } from 'react'
@@ -36,6 +37,9 @@ export function Header() {
       </section>
       <section className={styles.userArea}>
         <div className={global.medium10}>
+
+        {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
+        
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
             {console.log(store)}

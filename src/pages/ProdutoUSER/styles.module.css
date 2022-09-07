@@ -1,9 +1,29 @@
 .section {
-    padding: 2rem;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 3rem;
-    width: 60%;
+    height: calc(100vh - 19.2rem);
 }
 
+.section > div {
+    padding: 7rem 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: 1200px;
+} 
+
+.section > div > div {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.section > div > div > div:nth-child(4) {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.inputNumber {
+    width: 6rem;
+}

@@ -31,8 +31,8 @@
 }
 
 .loginArea {
-    height: 60%;
-    width: 30%;
+    height: 450px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
