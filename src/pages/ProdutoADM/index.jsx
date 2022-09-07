@@ -33,7 +33,7 @@ export const ProdutoADM = () => {
         starting()
     }, [])
 
-    function adicionarProduto() {
+    function atualizarProduto() {
         axios.post(`http://localhost:8000/products/${id}`, {
             nome: { produtoNome },
             price: { produtoValor },

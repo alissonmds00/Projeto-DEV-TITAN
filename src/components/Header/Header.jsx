@@ -30,6 +30,7 @@ export function Header() {
         <img src={Logo} className={styles.logo} alt="" />
         <img src={Mainpage} alt="" />
       </a>
+      
       <section className={styles.searchbox}>
         <input className={global.regular14}
           disabled type="search" placeholder='O que você está buscando?' />
@@ -38,12 +39,15 @@ export function Header() {
       <section className={styles.userArea}>
         <div className={global.medium10}>
 
+          <BotãoCard content="Adicionar Prod."/>
         {/* {store.getState().user.admin && <BotãoCard content="Adicionar Prod."/>} */}
-        
+      
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
+            <p>
             {console.log(store)}
             {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
+            </p>
             <p>
               {user ? 'Acesse aqui o seu perfil' : ''}
             </p>
