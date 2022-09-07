@@ -18,7 +18,7 @@ export function Login() {
     })
     
     const history = useHistory()
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
@@ -27,7 +27,7 @@ export function Login() {
             store.dispatch({type: 'login', data: response.data})
             alert('Login efetuado com sucesso!')
             history.push("/")
-        }catch(e){alert(e.response.data)}
+        }catch(e){alert(e.response ? e.response.data : e)}
     }
 
     useEffect(() => {

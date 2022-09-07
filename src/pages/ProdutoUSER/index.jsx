@@ -55,7 +55,7 @@ export function ProdutoUSER() {
                         <div id='preçoItem' className={`${global.preçoTelaProduto} ${global.blueGray}`}>
                             R$ {product.price.toFixed(2).replace(".", ",")}
                         </div>
-                        <Botão onClick={() => {store.dispatch({type: 'login', data: {name: 'Mazur'}}); console.log(store.getState())}} content="Adicionar à Cesta" />
+                        <Botão onClick={() => {}} content="Adicionar à Cesta" />
                     </div>
                 </div>
             </section>
