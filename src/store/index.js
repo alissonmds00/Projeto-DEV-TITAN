@@ -1,4 +1,5 @@
-import {createStore} from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 const initialState = { user: undefined }
 
@@ -15,6 +16,9 @@ function Reducer(state = initialState, action){
     }
 }
 
-const store = createStore(Reducer)
+const store = createStore(
+    Reducer,
+    composeWithDevTools()
+  )
 
 export default store
