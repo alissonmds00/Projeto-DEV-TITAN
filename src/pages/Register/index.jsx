@@ -6,6 +6,7 @@ import Logo from '../../assets/logo.svg'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import starting from '../../functions/starting'
+import store from '../../store'
 const API = 'http://localhost:8000/users/register'
 
 
@@ -33,9 +34,9 @@ export function Register() {
             localStorage.setItem('user', JSON.stringify(response.data))
             store.dispatch({type: 'login', data: response.data})
             alert('Cadastro efetuado com sucesso!')
-            window.location.href = "http://localhost:3000"
+            history.push("/")
         })
-        .catch(e => alert(e))
+        .catch(e => alert(e.response ? e.response.data : e))
     }
 
     useEffect(() => {
@@ -144,7 +145,7 @@ export function Register() {
                         </section>
                     </form>
                     <p className={global.regular14}>
-                        Já possui uma conta? <a className={global.semibold15} href="http://127.0.0.1:3000/login">Faça login</a>
+                        Já possui uma conta? <a className={global.semibold15} onClick={() => history.push(`/login`)}>Faça login</a>
                     </p>
                 </section>
             </main>

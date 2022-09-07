@@ -9,24 +9,29 @@ import Mainpage from '../../assets/home.svg'
 import store from '../../store'
 import { BotãoCard } from '../BotãoCard/BotãoCard'
 import { useEffect } from 'react'
-import starting from '../../functions/starting'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
 
 export function Header() {
-
+  
   const [user, setUser] = useState(undefined)
+  
+  const history = useHistory()
 
   store.subscribe(() => setUser(store.getState().user))
+
+  useEffect(() => setUser(store.getState().user))
 
   function logout() {
     store.dispatch({ type: 'logout' })
     localStorage.removeItem('user')
-    window.location.href = "http://localhost:3000/login"
+    history.push("/login")
   }
 
   return (
     <header className={styles.header}>
-      <a href="http://localhost:3000/" className={styles.atalho}>
+      <a onClick={() => history.push(`/`)} className={styles.atalho}>
         <img src={Logo} className={styles.logo} alt="" />
         <img src={Mainpage} alt="" />
       </a>
@@ -42,14 +47,13 @@ export function Header() {
         
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
-            {console.log(store)}
             {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
             <p>
               {user ? 'Acesse aqui o seu perfil' : ''}
             </p>
           </div>
         </div>
-        <a href="http://localhost:3000/cart">
+        <a onClick={() => history.push(`/cart`)}>
           <img src={Cesta} alt="" title='Cesta de Compras' />
         </a>
         <a className={styles.toHover} onClick={logout}>

@@ -6,11 +6,13 @@ import { Footer } from '../../components/Footer/Footer'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import starting from '../../functions/starting'
+import { useHistory } from 'react-router-dom'
+
 
 export function Home() {
-
   
-
+  const history = useHistory()
+  
   useEffect(() => {
     // let tempProducts = await axios.get(`http://localhost:8000/products`)
     // setProducts(tempProducts)
@@ -49,7 +51,7 @@ export function Home() {
           </div>
           <div className={styles.areaCards}>
             {products.map((product) =>
-              <a href={`http://localhost:3000/product/${product.id}`} key={product.id}>
+              <a onClick={() => history.push(`/product/${product.id}`)} key={product.id}>
                 <Card
                   image={product.image}
                   name={product.name}
