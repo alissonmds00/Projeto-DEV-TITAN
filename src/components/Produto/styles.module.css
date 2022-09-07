@@ -8,6 +8,8 @@
 }
 
 .produtoIMG img {
+    display: block;
+    margin: auto;
     border-radius: 0.5rem;
     height: 100%;
 }

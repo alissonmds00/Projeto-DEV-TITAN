@@ -47,8 +47,7 @@ export function Header() {
       
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
-            <p>
-            {console.log(store)}
+            <p> 
             {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
             </p>
             <p>
