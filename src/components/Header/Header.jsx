@@ -9,12 +9,13 @@ import Mainpage from '../../assets/home.svg'
 import store from '../../store'
 import { useEffect } from 'react'
 import starting from '../../functions/starting'
+import { useState } from 'react'
 
 export function Header() {
 
-  useEffect(() => {
-    starting()
-  }, [])
+  const [user, setUser] = useState(undefined)
+
+  store.subscribe(() => setUser(store.getState().user))
 
   function logout() {
     store.dispatch({ type: 'logout' })
@@ -37,9 +38,10 @@ export function Header() {
         <div className={global.medium10}>
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
-            {store.getState().user ? `Bem-vind@! ${store.getState().user.name}` : 'Você ainda não está logad@.'}
+            {console.log(store)}
+            {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
             <p>
-              {store.getState().user ? 'Acesse aqui o seu perfil' : ''}
+              {user ? 'Acesse aqui o seu perfil' : ''}
             </p>
           </div>
         </div>
