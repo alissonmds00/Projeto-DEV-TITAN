@@ -10,8 +10,8 @@ import store from '../../store'
 
 export function Header() {
 
-  function logout(){
-    store.dispatch({type: 'logout'})
+  function logout() {
+    store.dispatch({ type: 'logout' })
     localStorage.removeItem('user')
     window.location.href = "http://localhost:3000/login"
   }
@@ -31,9 +31,9 @@ export function Header() {
         <div className={global.medium10}>
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <p>
-            Bem-vind@! {store.getState().user.name}
+            {store.getState().user ? `Bem-vind@! ${store.getState().user.name}` : 'Você ainda não está logad@.'}
             <p>
-              Acesse aqui o seu perfil
+              {store.getState().user ? 'Acesse aqui o seu perfil' : ''}
             </p>
           </p>
         </div>
