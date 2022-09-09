@@ -19,12 +19,12 @@ export function ProdutoUSER() {
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API}/products/${id}`)
-        .then(response => setProduct(response.data)) 
-        .catch(e => alert(e))
+            .then(response => setProduct(response.data)) 
+            .catch(e => alert(e))
     }, [])
 
     return (
-        <div className='container'>
+        <div className={styles.container}>
             <Header />
             <section className={styles.section}>
                 <div>

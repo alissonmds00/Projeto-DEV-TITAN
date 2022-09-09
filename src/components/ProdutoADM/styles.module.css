@@ -22,3 +22,12 @@
 .inputNumber {
     width: 6rem;
 }
+
+a {
+    display: block;
+    text-align: center;
+}
+
+a:hover {    
+    color: #B4305E;    
+}

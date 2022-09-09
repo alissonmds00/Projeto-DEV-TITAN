@@ -1,4 +1,4 @@
-.produtoIMG {
+#produtoIMG {
     width: auto;
     background-color: white;
     border-radius: 1rem;
@@ -7,7 +7,7 @@
     border-left: #A4002E solid 0.3rem;
 }
 
-.produtoIMG img {
+#produtoIMG img {
     display: block;
     margin: auto;
     border-radius: 0.5rem;
