@@ -10,22 +10,17 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import starting from '../../functions/starting'
 import store from '../../store'
+import axios from 'axios'
 
 export function ProdutoUSER() {
     const { id } = useParams()
 
-    const [product, setProduct] = useState({
-        id: 3,
-        name: "Dipirona Monoidratada 1000mg",
-        price: 2,
-        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-        description: "Teste Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-        stock: 5,
-    })
+    const [product, setProduct] = useState({})
 
     useEffect(() => {
-        // tempProduct = await axios.get(`http://localhost:8000/products/${id}`)
-        // setProduct(tempProduct)
+        axios.get(`${import.meta.env.VITE_API}/products/${id}`)
+        .then(response => setProduct(response.data)) 
+        .catch(e => alert(e))
         starting()
     }, [])
 
@@ -34,17 +29,17 @@ export function ProdutoUSER() {
             <Header />
             <section className={styles.section}>
                 <div>
-                    <Produto />
+                    <Produto img={ product.image } />
                     <div>
                         <div className={`${global.semibold15} ${global.darkGray}`}>
                             {product.name}
                         </div>
+                        <div className={global.regular14}>
+                            {product.description}
+                        </div>
                         <div className={`${global.regular14} ${global.darkGray}`}>
                             Disponível: {product.stock}
                             {product.stock < 10 && <p className={`${global.semibold15} ${global.red}`}> Aproveite agora! Estoque Baixo!</p>}
-                        </div>
-                        <div className={global.regular14}>
-                            {product.description}
                         </div>
                         <div className={`${global.regular14} ${global.darkGray}`}>
                             <label htmlFor="quantidadeItem">
@@ -53,7 +48,7 @@ export function ProdutoUSER() {
                             <input type="number" id='quantidadeItem' className={styles.inputNumber}/>
                         </div>
                         <div id='preçoItem' className={`${global.preçoTelaProduto} ${global.blueGray}`}>
-                            R$ {product.price.toFixed(2).replace(".", ",")}
+                            R$ {product.price ? product.price.toFixed(2).replace(".", ",") : '0,00'}
                         </div>
                         <Botão onClick={() => {}} content="Adicionar à Cesta" />
                     </div>

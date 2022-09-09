@@ -8,39 +8,21 @@ import axios from 'axios'
 import starting from '../../functions/starting'
 import { useHistory } from 'react-router-dom'
 import store from '../../store'
+import env from 'react-dotenv'
 
 
 export function Home() {
   
   const history = useHistory()
   
+  const [products, setProducts] = useState([])
+
   useEffect(() => {
-    // let tempProducts = await axios.get(`http://localhost:8000/products`)
-    // setProducts(tempProducts)
+    axios.get(`${import.meta.env.VITE_API}/products`)
+    .then(response => setProducts(response.data)) 
+    .catch(e => alert(e))
     starting()
   }, [])
-
-  const [products, setProducts] = useState(
-    [
-      {
-        id: 1,
-        name: "Dipirona Monoidratada 500mg",
-        price: 10,
-        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-        quantity: 20,
-      },
-      {
-        id: 2,
-        name: "Dipirona Monoidratada 1000mg",
-        price: 20,
-        image: "https://uploads.consultaremedios.com.br/product_variation_images/full/381836aa361a2211eda8f29e0a0dd87cf0d16a27.jpg?1653565706",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-        quantity: 17,
-      },
-      // DEPOIS APAGAR ISSO E FAZER O "PRODUCTS" COMEÇAR COMO []. O USEEFFECT QUE ADICIONA OS PRODUTOS AO PRODUCTS //
-    ]
-  )
 
   return (
     <div className="container">

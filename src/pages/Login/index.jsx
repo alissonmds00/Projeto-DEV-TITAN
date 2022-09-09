@@ -22,7 +22,7 @@ export function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            var response = await axios.post(`http://localhost:8000/users/login`, form)
+            var response = await axios.post(`${import.meta.env.VITE_API}/users/login`, form)
             localStorage.setItem('user', JSON.stringify(response.data))
             store.dispatch({type: 'login', data: response.data})
             alert('Login efetuado com sucesso!')

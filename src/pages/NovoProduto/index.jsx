@@ -22,14 +22,7 @@ export const NovoProduto = () => {
 
     function adicionarProduto(e) {
         e.preventDefault()
-        console.log({
-            name:  produtoNome,
-            price:  produtoValor,
-            image: produtoImagem,
-            description:  produtoDesc,
-            stock:  produtoQuantidade
-        })
-        axios.post('http://localhost:8000/products/register', {
+        axios.post(`${import.meta.env.VITE_API}/products/register`, {
             name:  produtoNome,
             price:  produtoValor,
             image: produtoImagem,
@@ -80,12 +73,12 @@ export const NovoProduto = () => {
                             <label htmlFor="produtoQuant" className={global.semibold15}>
                                 Estoque
                             </label>
-                            <input type="number" name="produtoQuant" id="produtoQuant" value={produtoQuantidade} onChange={(e) => setProdutoQuantidade(e.target.value)} />
+                            <input type="number" name="produtoQuant" id="produtoQuant" value={produtoQuantidade} onChange={(e) => setProdutoQuantidade(parseFloat(e.target.value))} />
                             <br />
                             <label htmlFor="produtoPreco" className={global.semibold15} >
                                 Preço Unitário
                             </label>
-                            <input type="number" name="produtoPreco" id="produtoPreco" step='0.01' className={styles.inputNumber} value={produtoValor} onChange={(e) => setProdutoValor(e.target.value)} />
+                            <input type="number" name="produtoPreco" id="produtoPreco" step='0.01' className={styles.inputNumber} value={produtoValor} onChange={(e) => setProdutoValor(parseFloat(e.target.value))} />
                             <label htmlFor="">
                             </label>
                         </div>

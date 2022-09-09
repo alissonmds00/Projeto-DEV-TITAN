@@ -8,7 +8,6 @@ import axios from 'axios'
 import starting from '../../functions/starting'
 import store from '../../store'
 import { useHistory } from 'react-router-dom'
-const API = 'http://localhost:8000/users/register'
 
 
 export function Register() {
@@ -25,7 +24,7 @@ export function Register() {
 
     function Cadastrar(e) {
         e.preventDefault()
-        axios.post(API, {
+        axios.post(`${import.meta.env.VITE_API}/users/register`, {
             name: nome,
             lastname: sobrenome,
             password: senha,
