@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import starting from '../../functions/starting'
 import store from '../../store'
 import axios from 'axios'
@@ -8,7 +7,6 @@ import { ProdutoUSER } from '../../components/ProdutoUSER'
 import { useEffect, useState } from 'react'
 
 export function Produto() {
-    const { id } = useParams()
 
     const [user, setUser] = useState(undefined)
 
@@ -21,6 +19,6 @@ export function Produto() {
     }, [])
 
     return (
-        isAdmin(user) ? <ProdutoADM id={id} /> : <ProdutoUSER id={id} />
+        isAdmin(user) ? <ProdutoADM/> : <ProdutoUSER/>
     )
 }
