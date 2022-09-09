@@ -30,7 +30,6 @@ export const ProdutoADM = () => {
     useEffect(() => {
         // tempProduct = await axios.get(`http://localhost:8000/products/${id}`)
         // setProduct(tempProduct)
-        starting()
     }, [])
 
     function atualizarProduto() {

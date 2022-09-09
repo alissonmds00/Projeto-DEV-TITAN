@@ -11,6 +11,7 @@ import { BotãoCard } from '../BotãoCard/BotãoCard'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import isAdmin from '../../functions/isAdmin'
 
 
 export function Header() {
@@ -43,7 +44,7 @@ export function Header() {
       <section className={styles.userArea}>
         <div className={global.medium10}>
 
-        {store.getState().user && store.getState().user.admin && <a onClick={() => history.push(`/add`)}><BotãoCard content="Adicionar Prod."/></a>}
+        {isAdmin(user) && <a onClick={() => history.push(`/add`)}><BotãoCard content="Adicionar Prod."/></a>}
       
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>

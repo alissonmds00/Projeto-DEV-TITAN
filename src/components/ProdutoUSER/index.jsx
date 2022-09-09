@@ -1,10 +1,10 @@
-import '../ProdutoUSER/styles.module.css'
+import './styles.module.css'
 import styles from './styles.module.css'
 import global from '../../styles/global.module.css'
-import { Header } from '../../components/Header/Header'
-import { Footer } from '../../components/Footer/Footer'
-import { Produto } from '../../components/Produto/Produto'
-import { Botão } from '../../components/Botão/Botão'
+import { Header } from '../Header/Header'
+import { Footer } from '../Footer/Footer'
+import { Produto } from '../Produto/Produto'
+import { Botão } from '../Botão/Botão'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -21,7 +21,6 @@ export function ProdutoUSER() {
         axios.get(`${import.meta.env.VITE_API}/products/${id}`)
         .then(response => setProduct(response.data)) 
         .catch(e => alert(e))
-        starting()
     }, [])
 
     return (

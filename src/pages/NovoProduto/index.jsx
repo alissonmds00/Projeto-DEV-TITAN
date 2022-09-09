@@ -1,4 +1,4 @@
-import styles from '../ProdutoADM/styles.module.css'
+import styles from '../../components/ProdutoADM/styles.module.css'
 import global from '../../styles/global.module.css'
 import { Header } from '../../components/Header/Header'
 import { Footer } from '../../components/Footer/Footer'

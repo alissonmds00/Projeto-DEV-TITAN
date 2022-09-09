@@ -4,8 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Home } from "./src/pages/Home"
 import { Login } from "./src/pages/Login"
 import { Register } from "./src/pages/Register";
-import { ProdutoADM } from "./src/pages/ProdutoADM";
-import { ProdutoUSER } from "./src/pages/ProdutoUSER";
+import { Produto } from "./src/pages/Produto";
 import { Cart } from "./src/pages/Cart";
 import { NovoProduto } from "./src/pages/NovoProduto";
 
@@ -18,8 +17,7 @@ export default function Routes() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/admin" component={ProdutoADM} />
-            <Route path="/product/:id" component={ProdutoUSER} /> {/* os 2 pontos significa que ele espera uma variável ID  */}
+            <Route path="/product/:id" component={Produto} /> {/* os 2 pontos significa que ele espera uma variável ID  */}
             <Route path="/cart" component={Cart} />
             <Route path="/add" component={NovoProduto} />
         </BrowserRouter>
