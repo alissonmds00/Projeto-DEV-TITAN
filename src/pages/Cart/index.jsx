@@ -8,35 +8,43 @@ import { ItemCart } from '../../components/ItemCart/ItemCart'
 import { Botão } from '../../components/Botão/Botão'
 import { useEffect, useState } from 'react'
 import starting from '../../functions/starting'
+import store from '../../store'
+import { PriceCounter } from '../../components/PriceCounter'
 
 export function Cart() {
 
+    const [user, setUser] = useState(store.getState().user)
+  
+    const [cart, setCart] = useState([])
+
+    store.subscribe(() => setUser(store.getState().user))
+
     useEffect(() => {
         starting()
-        //      let tempCart = await axios.get(`http://localhost:8000/users/id`)
-        //      setCart(tempCart)
     }, [])
 
-    const [cart, setCart] = useState(
-        [
-            {
-                id: 1,
-                name: "Dipitona Monoidratada 500mg",
-                price: 10,
-                image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-                description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-                quantity: 2,
-            },
-            {
-                id: 2,
-                name: "Dipitona Monoidratada 1000mg",
-                price: 15,
-                image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-                description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-                quantity: 3,
-            },
-        ]
-    )
+    useEffect(() => {
+        if(user) {
+            axios.get(`${import.meta.env.VITE_API}/cart/${user.id}`)
+                .then(response => setCart(response.data)) 
+                .catch(e => alert(e))
+        }
+    }, [user])
+
+    function deletar(product_id){
+        axios.delete(`${import.meta.env.VITE_API}/cart/delete/${user.id}/${product_id}`)
+            .then(response => setCart(response.data)) 
+            .catch(e => alert(e))
+    }
+
+    function comprar(user_id){
+        axios.patch(`${import.meta.env.VITE_API}/cart/buy/${user.id}`)
+        .then(response => {
+            alert(response.data)
+            setCart([])
+        })
+        .catch(e => alert(e.response ? e.response.data : e))
+    }
 
     return (
         <div className={styles.container}>
@@ -48,36 +56,35 @@ export function Cart() {
                             Sua Cesta de Compras
                         </h2>
                         <div>
-                            {cart.map((itemCart) =>
+                            {cart.length > 0 ?
+                            cart.map((itemCart) =>
                                 <ItemCart
                                     image={itemCart.image}
                                     name={itemCart.name}
                                     price={itemCart.price.toFixed(2).replace(".",",")}
                                     quantity={itemCart.quantity}
                                     description={itemCart.description}
+                                    onClick={() => deletar(itemCart.id)}
                                     key={itemCart.id}
                                 />
-                            )
+                            ) :
+                            <p>Parece que você ainda não tem produtos no carrinho, vá às compras imediatamente para resolver esse problema!</p>
                             }
                         </div>
                     </article>
                 </div>
                 <div>
+                    {cart.length > 0 && 
                     <div>
                         <h3 className={`${global.h3} ${global.darkGray}`}>TOTAL DA COMPRA</h3>
-                        <p className={`${global.preçoTelaProduto} ${global.blueGray}`}>
-                            R$ {
-                                cart.reduce((amount, current, idx) => {
-                                if(idx == 1) return amount.price*amount.quantity + current.price*current.quantity
-                                return amount + current.price*current.quantity
-                            }).toFixed(2).replace(".",",")
-                            }
-                        </p>
+                        <PriceCounter cart={cart}/>
                         <Botão
+                            onClick={comprar}
                             content='Finalizar Compra'
                         // Enviar pro backend o cart do usuário
                         />
                     </div>
+                    }
                     <img className={styles.imgCesta} src={imgCesta} />
                 </div>
             </main>

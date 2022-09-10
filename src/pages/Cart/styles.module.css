@@ -35,6 +35,7 @@
     bottom: 10.2rem;
     right: 10rem;
     height: 40%;
+    z-index: -1;
 }
 
 .areaItens {
@@ -51,4 +52,8 @@
 
 .areaItens h2 {
     padding-bottom: 1rem;
+}
+
+article > div > p{
+    font-size: 18px;
 }
