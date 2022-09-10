@@ -16,18 +16,18 @@ export function Login() {
         email: '',
         password: ''
     })
-    
+
     const history = useHistory()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try{
+        try {
             var response = await axios.post(`${import.meta.env.VITE_API}/users/login`, form)
             localStorage.setItem('user', JSON.stringify(response.data))
-            store.dispatch({type: 'login', data: response.data})
+            store.dispatch({ type: 'login', data: response.data })
             alert('Login efetuado com sucesso!')
             history.push("/")
-        }catch(e){alert(e.response ? e.response.data : e)}
+        } catch (e) { alert(e.response ? e.response.data : e) }
     }
 
     useEffect(() => {
@@ -52,35 +52,34 @@ export function Login() {
                         <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="email">
                             E-mail
                         </label>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            className={`${styles.inputBar} ${styles.email}`} 
-                            id="email" 
+                        <input
+                            type="email"
+                            name="email"
+                            className={`${styles.inputBar} ${styles.email}`}
+                            id="email"
                             placeholder='Digite seu email'
                             value={form.email}
-                            onChange={e => setForm({...form, email: e.target.value})}
+                            onChange={e => setForm({ ...form, email: e.target.value })}
                         />
-                        
+
                         <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="senha">
                             Senha
                         </label>
                         <input
-                            type="password" 
+                            type="password"
                             name="senha"
-                            className={`${styles.inputBar} ${styles.senha}`} 
+                            className={`${styles.inputBar} ${styles.senha}`}
                             id="senha"
                             placeholder='Digite sua senha'
                             value={form.password}
-                            onChange={e => setForm({...form, password: e.target.value})} 
+                            onChange={e => setForm({ ...form, password: e.target.value })}
                         />
 
                         <Botão content="ENTRAR" />
                     </form>
                     <div className={styles.registro}>
                         <p className={global.regular14}>
-                            Não possui uma conta?
-                            <br />
+                            Não possui uma conta?<br />
                             <a className={global.semibold15} onClick={() => history.push(`/register`)}>
                                 Cadastre-se
                             </a>

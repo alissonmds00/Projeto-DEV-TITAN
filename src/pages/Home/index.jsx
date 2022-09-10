@@ -8,8 +8,6 @@ import axios from 'axios'
 import starting from '../../functions/starting'
 import { useHistory } from 'react-router-dom'
 import store from '../../store'
-import env from 'react-dotenv'
-
 
 export function Home() {
   
