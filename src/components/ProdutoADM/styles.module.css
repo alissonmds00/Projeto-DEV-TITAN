@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     height: calc(100vh - 19.2rem);
+    align-items: center;
+    gap: 2rem;
 }
 
 .section > div {
@@ -9,25 +11,37 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    width: 1200px;
 }
 
-#areaForm textarea, input {
-    border: 1px solid black;
-    padding: 0.5rem;
-    border-radius: 0.4rem;
-    margin-bottom: 1rem;
+.areaForm textarea, .areaForm input {
+    display: flex;
+    justify-content: center;
+    outline: #D9D9D9 solid 2px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: 200ms;
+    width: 100%;
 }
 
-.inputNumber {
-    width: 6rem;
+.areaForm textarea:focus, .areaForm input:focus {
+    outline: #9A9A9A solid 2px;
+    transition: 200ms;
+}
+
+.areaForm div {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.areaForm div div {
+    display: flex;
+    flex-direction: column;
 }
 
 a {
     display: block;
     text-align: center;
-}
-
-a:hover {    
-    color: #B4305E;    
 }

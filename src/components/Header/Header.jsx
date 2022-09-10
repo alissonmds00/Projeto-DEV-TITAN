@@ -49,10 +49,10 @@ export function Header() {
           <img id='userIcon' src={userIcon} alt="Foto do usuário" />
           <div>
             <p> 
-            {user ? `Bem-vind@! ${user.name}` : 'Você ainda não está logad@.'}
+            {user ? `Bem-vind@, ${user.name}!` : 'Você ainda não está logad@.'}
             </p>
             <p>
-              {user ? 'Acesse aqui o seu perfil' : ''}
+              {user ? 'Aproveite nossas ofertas' : ''}
             </p>
           </div>
         </div>
