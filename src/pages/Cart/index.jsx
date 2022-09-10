@@ -37,6 +37,15 @@ export function Cart() {
             .catch(e => alert(e))
     }
 
+    function comprar(user_id){
+        axios.patch(`${import.meta.env.VITE_API}/cart/buy/${user.id}`)
+        .then(response => {
+            alert(response.data)
+            setCart([])
+        })
+        .catch(e => alert(e.response ? e.response.data : e))
+    }
+
     return (
         <div className={styles.container}>
             <Header />
@@ -70,6 +79,7 @@ export function Cart() {
                         <h3 className={`${global.h3} ${global.darkGray}`}>TOTAL DA COMPRA</h3>
                         <PriceCounter cart={cart}/>
                         <Botão
+                            onClick={comprar}
                             content='Finalizar Compra'
                         // Enviar pro backend o cart do usuário
                         />
