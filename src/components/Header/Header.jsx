@@ -15,14 +15,21 @@ import isAdmin from '../../functions/isAdmin'
 
 
 export function Header() {
-  
-  const [user, setUser] = useState(undefined)
-  
+
+  function getCart() {
+    return user ? user.cart : []
+  }
+
+  const [user, setUser] = useState(store.getState().user)
+
+  const [cart, setCart] = useState(getCart()) 
+
   const history = useHistory()
 
-  store.subscribe(() => setUser(store.getState().user))
-
-  useEffect(() => setUser(store.getState().user))
+  store.subscribe(() => {
+    setUser(store.getState().user)
+    setCart(getCart())
+  })
 
   function logout() {
     store.dispatch({ type: 'logout' })
