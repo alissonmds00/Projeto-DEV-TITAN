@@ -23,12 +23,12 @@ export function Home() {
   }, [])
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Header />
       <main className={styles.main}>
         <article className={styles.articleMain}>
           <div id='destaques' className={styles.areaTitle}>
-            <h2 className={`${global.h2}`}>DESTAQUES DA SEMANA</h2>
+            <h2 className={`${global.h2}`}>NOSSOS PRODUTOS</h2>
           </div>
           <div className={styles.areaCards}>
             {products.map((product) =>

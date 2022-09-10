@@ -4,6 +4,7 @@
     background-color: #E9E9E9;
     align-items: center;
     display: flex;
+    position: absolute;
     justify-content: space-between;
     padding: 2rem 4rem;
     bottom: 0;

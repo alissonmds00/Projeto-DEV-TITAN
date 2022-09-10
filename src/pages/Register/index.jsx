@@ -13,26 +13,21 @@ import { useHistory } from 'react-router-dom'
 export function Register() {
 
     const history = useHistory()
-
-    const [nome, setNome] = useState('')
-    const [sobrenome, setSobrenome] = useState('')
-    const [senha, setSenha] = useState('')
-    const [email, setEmail] = useState('')
-    const [cep, setCep] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [admin, setAdmin] = useState(false)
+    
+    const [form, setForm] = useState({
+        name: '',
+        lastname: '',
+        password: '',
+        email: '',
+        cep: '',
+        cpf: '',
+        admin: false
+    })
+    
 
     function Cadastrar(e) {
         e.preventDefault()
-        axios.post(`${import.meta.env.VITE_API}/users/register`, {
-            name: nome,
-            lastname: sobrenome,
-            password: senha,
-            email: email,
-            cep: cep,
-            cpf: cpf,
-            admin: admin
-        })
+        axios.post(`${import.meta.env.VITE_API}/users/register`, form)
         .then(response => {
             localStorage.setItem('user', JSON.stringify(response.data))
             store.dispatch({type: 'login', data: response.data})
@@ -70,8 +65,8 @@ export function Register() {
                                     type="text" name="nome"
                                     className={`${styles.inputBar} ${styles.nome}`} id="nome"
                                     placeholder='Digite aqui'
-                                    value={nome}
-                                    onChange={(e) => setNome(e.target.value)} />
+                                    value={form.name}
+                                    onChange={(e) => setForm({...form, name: e.target.value})} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="senha">
@@ -81,8 +76,8 @@ export function Register() {
                                     type="password" name="senha"
                                     className={`${styles.inputBar} ${styles.senha}`} id="senha"
                                     placeholder='Digite sua senha'
-                                    value={senha}
-                                    onChange={(e) => setSenha(e.target.value)} />
+                                    value={form.password}
+                                    onChange={(e) => setForm({...form, password: e.target.value})} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="sobrenome">
@@ -91,8 +86,8 @@ export function Register() {
                                 <input type="text" name="sobrenome"
                                     className={`${styles.inputBar} ${styles.sobrenome}`} id="sobrenome"
                                     placeholder='Digite aqui'
-                                    value={sobrenome}
-                                    onChange={(e) => setSobrenome(e.target.value)} />
+                                    value={form.lastname}
+                                    onChange={(e) => setForm({...form, lastname: e.target.value})} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="cpf">
@@ -102,8 +97,8 @@ export function Register() {
                                     type="text" name="cpf"
                                     className={`${styles.inputBar} ${styles.cpf}`} id="cpf"
                                     placeholder='Digite aqui'
-                                    value={cpf}
-                                    onChange={(e) => setCpf(e.target.value)} />
+                                    value={form.cpf}
+                                    onChange={(e) => setForm({...form, cpf: e.target.value})} />
                             </div>
                             <div className={styles.subAreaDados}>
                                 <label className={`${global.semibold15} ${global.blueGray}`} htmlFor="email">
@@ -112,8 +107,8 @@ export function Register() {
                                 <input type="email" name="email" className={`${styles.inputBar} ${styles.email}`}
                                     id="email"
                                     placeholder='Digite seu email'
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={form.email}
+                                    onChange={(e) => setForm({...form, email: e.target.value})}
                                 />
                             </div>
                             <div className={styles.subAreaDados}>
@@ -124,11 +119,12 @@ export function Register() {
                                     type="text" name="cep"
                                     className={`${styles.inputBar} ${styles.cep}`} id="cep"
                                     placeholder='Digite aqui'
-                                    onChange={(e) => setCep(e.target.value)} />
+                                    value={form.cep}
+                                    onChange={(e) => setForm({...form, cep: e.target.value})} />
                             </div>
                         </section>
                         <section>
-                            <div onChange={(e) => setAdmin(e.target.value == 'true')} className={styles.inputCheckContas}>
+                            <div onChange={(e) => setForm({...form, admin: e.target.value == 'true'})} className={styles.inputCheckContas}>
                                 <div>
                                     <input className={styles.radio} type="radio" name="adm" id="adm1" value="false"/>
                                     <label className={global.regular14} htmlFor="adm1">

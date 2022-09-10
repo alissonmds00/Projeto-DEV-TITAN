@@ -8,80 +8,90 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import starting from '../../functions/starting'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 export const ProdutoADM = () => {
     const { id } = useParams()
-    const [produtoNome, setProdutoNome] = useState('')
-    const [produtoDesc, setProdutoDesc] = useState('')
-    const [produtoValor, setProdutoValor] = useState()
-    const [produtoQuantidade, setProdutoQuantidade] = useState()
-    const [produtoImagem, setProdutoImagem] = useState('')
 
-    const [product, setProduct] = useState({
-        id: 3,
-        name: "Dipirona Monoidratada 1000mg",
-        price: 2,
-        image: "https://www.drogariaminasbrasil.com.br/media/product/311/dipirona-monoidratada-500mg-com-30-comprimidos-generico-prati-donaduzzi-4c8.jpg",
-        description: "Teste Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi reprehenderit possimus repellendus placeat harum distinctio aliquid vero explicabo.",
-        stock: 5,
-    })
+    const [form, setForm] = useState({})
+
+    const history = useHistory()
 
     useEffect(() => {
-        // tempProduct = await axios.get(`http://localhost:8000/products/${id}`)
-        // setProduct(tempProduct)
+        starting()
+        axios.get(`${import.meta.env.VITE_API}/products/${id}`)
+            .then(response => setForm(response.data)) 
+            .catch(e => alert(e))
     }, [])
 
-    function atualizarProduto() {
-        axios.post(`http://localhost:8000/products/${id}`, {
-            nome: { produtoNome },
-            price: { produtoValor },
-            image: { produtoImagem },
-            description: { produtoDesc },
-            stock: { produtoStock }
-        })
+    function atualizarProduto(e) {
+        e.preventDefault()
+        axios.put(`${import.meta.env.VITE_API}/products/update/${id}`, form)
+        .then(r => 
+            alert(r.data)
+        )
+        .catch(e => 
+            alert(e.response ? e.response.data : e)
+        )
     }
+
+    function deletarProduto(e) {
+        axios.delete(`${import.meta.env.VITE_API}/products/delete/${id}`)
+        .then(r => 
+            alert(r.data)
+        )
+        .then(() =>
+            history.push('/')
+        )
+        .catch(e => 
+            alert(e.response ? e.response.data : e)
+        )
+    }
+
     return (
-        <div className='container'>
+        <div className={styles.container}>
             <Header />
             <section className={styles.section}>
+                <Produto img={ form.image } />
                 <div>
-                    <Produto img={produtoImagem} />
-                    <div>
-                        <form onSubmit={atualizarProduto} name='areaForm'>
-                            <div>
-                                <label htmlFor="produtoNome" className={global.semibold15}>
-                                    Nome do produto
-                                </label>
-                                <br />
-                                <input type="text" name='produtoNome' value={produtoNome} onChange={(e) => [setProdutoNome(e.target.value), setError('')]} />
-                                <br />
-                                <label htmlFor="produtoIMG" className={global.semibold15}>
-                                    Imagem do produto
-                                </label>
-                                <br />
-                                <input type="url" name='produtoIMG' value={produtoImagem} onChange={(e) => [setProdutoImagem(e.target.value), setError('')]} />
-                                <br />
-                                <label htmlFor="produtoDescricao" className={global.semibold15}>
-                                    Descrição do Produto
-                                </label>
-                                <br />
-                                <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" value={(produtoDesc)} onChange={(e) => [setProdutoDesc(e.target.value), setError('')]}></textarea>
-                            </div>
-                            <div>
-                                <label htmlFor="produtoQuant" className={global.semibold15}>
-                                    Estoque
-                                </label>
-                                <input type="number" name="produtoQuant" id="produtoQuant" value={produtoQuantidade} onChange={(e) => [setProdutoQuantidade(e.target.value), setError('')]} />
-                                <br />
-                                <label htmlFor="produtoPreco" className={global.semibold15} >
-                                    Preço Unitário
-                                </label>
-                                <input type="number" name="produtoPreco" id="produtoPreco" min={1} className={styles.inputNumber} value={produtoValor} onChange={(e) => [setProdutoValor(e.target.value), setError('')]} />
-                            </div>
-                            <Botão content="Atualizar Produto" />
-                        </form>
-                    </div>
+                    <form onSubmit={atualizarProduto} name='areaForm'>
+                        <div>
+                            <label htmlFor="produtoNome" className={global.semibold15}>
+                                Nome do produto
+                            </label>
+                            <br />
+                            <input type="text" name='produtoNome' value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} />
+                            <br />
+                            <label htmlFor="produtoIMG" className={global.semibold15}>
+                                Imagem do produto
+                            </label>
+                            <br />
+                            <input type="url" name='produtoIMG' value={form.image} onChange={(e) => setForm({...form, image: e.target.value})} />
+                            <br />
+                            <label htmlFor="produtoDescricao" className={global.semibold15}>
+                                Descrição do Produto
+                            </label>
+                            <br />
+                            <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" value={form.description} onChange={(e) => setForm({...form, description: e.target.value})}></textarea>
+                        </div>
+                        <div>
+                            <label htmlFor="produtoQuant" className={global.semibold15}>
+                                Estoque
+                            </label>
+                            <input type="number" name="produtoQuant" id="produtoQuant" value={form.stock} onChange={(e) => setForm({...form, stock: parseFloat(e.target.value)})} />
+                            <br />
+                            {form.stock < 10 && <p className={`${global.semibold15} ${global.red}`}> Estoque Baixo!</p>}
+                            <br />
+                            <label htmlFor="produtoPreco" className={global.semibold15} >
+                                Preço Unitário
+                            </label>
+                            <input type="number" name="produtoPreco" id="produtoPreco" step='0.01' className={styles.inputNumber} value={form.price} onChange={(e) => setForm({...form, price: parseFloat(e.target.value)})} />
+                            <label htmlFor="">
+                            </label>
+                        </div>
+                        <Botão content="Editar Produto" />
+                        <a className={`${global.semibold15} ${global.red}`} onClick={() => deletarProduto()}>Deletar Produto</a>
+                    </form>
                 </div>
             </section>
             <Footer />

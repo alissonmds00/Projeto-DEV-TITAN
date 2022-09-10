@@ -1,7 +1,7 @@
 .Card {
     display: flex;
     align-items: center;
-    justify-content:end;
+    justify-content: space-between;
     gap: 1rem;
     background-color: white;
     border-radius: 1.5rem;
@@ -40,6 +40,6 @@
 }
 
 .Card img {
-    width:100%;
+    width:80%;
     border-radius: 0.6rem;
 }

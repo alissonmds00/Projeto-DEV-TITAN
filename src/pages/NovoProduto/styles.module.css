@@ -1,9 +1,21 @@
+.container {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 9rem;
+}
+
 .section {
-    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 19.2rem);
+}
+
+.section > div {
+    padding: 7rem 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
+    width: 1200px;
 }
 
 #areaForm textarea, input {
