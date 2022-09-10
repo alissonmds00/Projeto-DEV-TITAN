@@ -4,7 +4,7 @@ import global from '../../styles/global.module.css'
 export function Botão(props) {
     return (
         <div>
-            <button onClick={props.onClick} name={props.name} type='submit' className={`${styles.button} ${global.h2}`}>
+            <button onClick={props.onClick} name={props.name} type='submit' disabled={props.disabled} className={`${styles.button} ${global.h2}`}>
                 {props.content}
             </button>
         </div>
