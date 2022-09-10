@@ -1,0 +1,15 @@
+#produtoIMG {
+    width: auto;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0rem 0.5rem 3rem -1rem rgba(0, 0, 0, 18%);
+    border-left: #A4002E solid 0.3rem;
+}
+
+#produtoIMG img {
+    display: block;
+    margin: auto;
+    border-radius: 0.5rem;
+    height: 100%;
+}

@@ -17,11 +17,29 @@ export function ProdutoUSER() {
 
     const [product, setProduct] = useState({})
 
+    const [user, setUser] = useState(store.getState().user)
+
+    const [quantity, setQuantity] = useState(1)
+
+    store.subscribe(() => setUser(store.getState().user))
+
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_API}/products/${id}`)
             .then(response => setProduct(response.data)) 
-            .catch(e => alert(e))
+            .catch(e => alert(e.response ? e.response.data : e))
     }, [])
+
+    useEffect(() => {
+        starting()
+    }, [])
+
+    function addToCart(user) {
+        if(quantity > 0){
+            axios.post(`${import.meta.env.VITE_API}/cart/register/${user.id}`, {id: id, quantity: quantity})
+                .then(response => alert(response.data)) 
+                .catch(e => alert(e.response ? e.response.data : e))
+        } else {alert('Não é possível adicionar menos que 1 unidade ao carrinho.')}
+    }
 
     return (
         <div className={styles.container}>
@@ -44,12 +62,12 @@ export function ProdutoUSER() {
                             <label htmlFor="quantidadeItem">
                                 Quantidade
                             </label>
-                            <input type="number" id='quantidadeItem' className={styles.inputNumber}/>
+                            <input type="number" id='quantidadeItem' className={styles.inputNumber} value={quantity} onChange={e => setQuantity(parseFloat(e.target.value))}/>
                         </div>
                         <div id='preçoItem' className={`${global.preçoTelaProduto} ${global.blueGray}`}>
                             R$ {product.price ? product.price.toFixed(2).replace(".", ",") : '0,00'}
                         </div>
-                        <Botão onClick={() => {}} content="Adicionar à Cesta" />
+                        <Botão onClick={() => {addToCart(user)}} content="Adicionar à Cesta" />
                     </div>
                 </div>
             </section>
