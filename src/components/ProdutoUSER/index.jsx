@@ -63,7 +63,7 @@ export function ProdutoUSER() {
                             <label htmlFor="quantidadeItem">
                                 Quantidade
                             </label>
-                            <input type="number" id='quantidadeItem' className={styles.inputNumber} value={quantity} onChange={e => setQuantity(parseFloat(e.target.value))}/>
+                            <input type="number" id='quantidadeItem' className={styles.inputNumber} required value={quantity} onChange={e => setQuantity(parseFloat(e.target.value))}/>
                         </div>
                         <div id='preçoItem' className={`${global.preçoTelaProduto} ${global.blueGray}`}>
                             R$ {product.price ? product.price.toFixed(2).replace(".", ",") : '0,00'}

@@ -59,25 +59,25 @@ export const ProdutoADM = () => {
                             Nome do produto
                         </label>
                         <br />
-                        <input type="text" name='produtoNome' value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+                        <input type="text" name='produtoNome' value={form.name} required onChange={(e) => setForm({ ...form, name: e.target.value })} />
                         <br />
                         <label htmlFor="produtoIMG" className={`${global.semibold15} ${global.darkGray}`}>
                             Imagem do produto
                         </label>
                         <br />
-                        <input type="url" name='produtoIMG' value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} />
+                        <input type="url" name='produtoIMG' value={form.image} required onChange={(e) => setForm({ ...form, image: e.target.value })} />
                         <br />
                         <label htmlFor="produtoDescricao" className={`${global.semibold15} ${global.darkGray}`}>
                             Descrição do Produto
                         </label>
                         <br />
-                        <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}></textarea>
+                        <textarea name="produtoDescricao" id="produtoDescricao" cols="30" rows="7" required value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}></textarea>
                         <div>
                             <div>
                                 <label htmlFor="produtoQuant">
                                     {form.stock < 10 ? <p className={`${global.semibold15} ${global.red}`}> Estoque Baixo!</p> : <p className={`${global.semibold15} ${global.darkGray}`}> Estoque </p>}
                                 </label>
-                                <input type="number" name="produtoQuant" id="produtoQuant" value={form.stock} onChange={(e) => setForm({ ...form, stock: parseFloat(e.target.value) })} />
+                                <input type="number" name="produtoQuant" id="produtoQuant" value={form.stock} required onChange={(e) => setForm({ ...form, stock: parseFloat(e.target.value) })} />
                                 <br />
 
                             </div>
@@ -85,7 +85,7 @@ export const ProdutoADM = () => {
                                 <label htmlFor="produtoPreco" className={`${global.semibold15} ${global.darkGray}`} >
                                     Preço Unitário
                                 </label>
-                                <input type="number" name="produtoPreco" id="produtoPreco" step='0.01' className={styles.inputNumber} value={form.price} onChange={(e) => setForm({ ...form, price: parseFloat(e.target.value) })} />
+                                <input type="number" name="produtoPreco" id="produtoPreco" required step='0.01' className={styles.inputNumber} value={form.price} onChange={(e) => setForm({ ...form, price: parseFloat(e.target.value) })} />
                                 <label htmlFor="">
                                 </label>
                             </div>
