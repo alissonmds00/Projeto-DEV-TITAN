@@ -68,7 +68,7 @@ export function Cart() {
                                     key={itemCart.id}
                                 />
                             ) :
-                            <p>Parece que você ainda não tem produtos no carrinho, vá às compras imediatamente para resolver esse problema!</p>
+                            <p className={`${global.regular14} ${global.darkGray}`}>Parece que você ainda não tem produtos no carrinho. <br /> Vá às compras imediatamente para resolver esse problema!</p>
                             }
                         </div>
                     </article>
