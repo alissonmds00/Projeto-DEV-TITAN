@@ -40,12 +40,11 @@
 }
 
 .userArea {
-    padding-left: 4rem;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     gap: 3rem;
+    align-items: center;
 }
 
 .userArea img {
@@ -54,18 +53,19 @@
 
 .userArea div {
     display: flex;
-    align-items: center;
     gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .userArea div div {
-    display: flex;
     flex-direction: column;
     gap: 0rem;
 }
 
 .userArea p {
     white-space: nowrap;
+
 }
 
 .toHover:hover {

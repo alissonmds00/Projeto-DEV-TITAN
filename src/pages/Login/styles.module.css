@@ -48,12 +48,16 @@
     z-index: 1;
 }
 
+.loginArea label {
+    margin:  2rem 0.2rem 0.5rem;
+}
+
 .inputBar {
     display: flex;
     justify-content: center;
     outline: #D9D9D9 solid 2px;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 1rem 4rem;
     transition: 200ms;
 }
@@ -88,11 +92,8 @@
 
 .titulo {
     display: flex;
-    padding: 0em;
     justify-content: center;
 }
-
-
 
 .login {
     margin: 2rem 0;
@@ -101,7 +102,6 @@
     justify-content: center;
     border: 3px solid #D9D9D9;
     border-radius: 1rem;
-    padding: 0rem 0.5rem;
 }
 
 .registro {

@@ -29,6 +29,10 @@
     color: #9A9A9A;
 }
 
+.black {
+    color: black;
+}
+
 html {
     font-size: 62.5%;
     /* a partir de agora, cada 1 REM = 10px */
