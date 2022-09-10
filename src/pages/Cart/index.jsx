@@ -33,7 +33,8 @@ export function Cart() {
 
     function deletar(product_id){
         axios.delete(`${import.meta.env.VITE_API}/cart/delete/${user.id}/${product_id}`)
-            .then(response => setCart(response.data)) 
+            .then(response => setCart(response.data))
+            .then(() => {store.dispatch({type: 'update'})})
             .catch(e => alert(e))
     }
 

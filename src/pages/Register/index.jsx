@@ -28,9 +28,7 @@ export function Register() {
 
 
     function Cadastrar(e) {
-        e.preventDefault()
-
-        
+        e.preventDefault()        
         axios.post(`${import.meta.env.VITE_API}/users/register`, form)
             .then(response => {
                 localStorage.setItem('user', JSON.stringify(response.data))

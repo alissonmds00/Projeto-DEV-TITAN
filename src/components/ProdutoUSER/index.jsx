@@ -37,6 +37,7 @@ export function ProdutoUSER() {
         if(quantity > 0){
             axios.post(`${import.meta.env.VITE_API}/cart/register/${user.id}`, {id: id, quantity: quantity})
                 .then(response => alert(response.data)) 
+                .then(() => {store.dispatch({type: 'update'})})
                 .catch(e => alert(e.response ? e.response.data : e))
         } else {alert('Não é possível adicionar menos que 1 unidade ao carrinho.')}
     }

@@ -12,24 +12,37 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import isAdmin from '../../functions/isAdmin'
+import axios from 'axios'
 
 
 export function Header() {
 
   function getCart() {
-    return user ? user.cart : []
+    if(user) {
+      axios.get(`${import.meta.env.VITE_API}/cart/${user.id}`)
+          .then(response => setCart(response.data)) 
+          .catch(e => alert(e))
+    }
   }
 
   const [user, setUser] = useState(store.getState().user)
 
-  const [cart, setCart] = useState(getCart()) 
+  const [cart, setCart] = useState([]) 
 
   const history = useHistory()
 
   store.subscribe(() => {
     setUser(store.getState().user)
-    setCart(getCart())
+    getCart()
   })
+
+  useEffect(() => {
+    if(user) {
+      axios.get(`${import.meta.env.VITE_API}/cart/${user.id}`)
+          .then(response => setCart(response.data)) 
+          .catch(e => alert(e))
+    }
+  }, [user])
 
   function logout() {
     store.dispatch({ type: 'logout' })
@@ -63,8 +76,9 @@ export function Header() {
             </p>
           </div>
         </div>
-        <a onClick={() => history.push(`/cart`)}>
+        <a onClick={() => history.push(`/cart`)} className={styles.cartBox}>
           <img src={Cesta} alt="" title='Cesta de Compras' />
+          {cart.length > 0 && <div className={styles.floatingBall}>{cart.map(p => p.quantity).reduce((amount, current) => amount + current)}</div>}
         </a>
         <a className={styles.toHover} onClick={logout}>
           <img src={Exit} title="Sair da conta" />

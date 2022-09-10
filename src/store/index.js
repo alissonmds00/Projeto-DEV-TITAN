@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-const initialState = { user: undefined }
+const initialState = { user: undefined, update: false }
 
 function Reducer(state = initialState, action){
     switch(action.type){
@@ -10,6 +10,9 @@ function Reducer(state = initialState, action){
         
         case 'logout':
             return {...state, user: undefined}
+
+        case 'update':
+            return {...state, update: !state.update}
 
         default:
             return state

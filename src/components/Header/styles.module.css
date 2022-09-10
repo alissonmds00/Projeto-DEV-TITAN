@@ -71,3 +71,22 @@
 .toHover:hover {
     cursor: pointer;
 }
+
+.cartBox {
+    display: flex;
+    position: relative;
+}
+
+.floatingBall {
+    background-color: #e6e6e6;
+    color: black;
+    border: 1px rgb(166, 166, 166) solid;
+    border-radius: 10px;
+    width: 14px;
+    height: 14px;
+    padding-top: 1px;
+    position: absolute;
+    bottom: -2px;
+    right: 3px;
+    font-weight: 900;
+}
