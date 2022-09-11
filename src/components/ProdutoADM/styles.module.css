@@ -45,3 +45,8 @@ a {
     display: block;
     text-align: center;
 }
+
+textarea {
+    max-height: 110px;
+    max-width: 360px;
+}

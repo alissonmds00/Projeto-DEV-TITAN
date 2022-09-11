@@ -165,4 +165,5 @@ form section:nth-child(2) {
 
 .radio{
     margin: 0;
+    width: 15px;
 }
